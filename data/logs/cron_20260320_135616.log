@@ -1,0 +1,22 @@
+2026-03-20 13:56:16,267 - INFO - Cron job started: search
+2026-03-20 13:56:16,268 - INFO - Workspace: /Users/petekaik/.openclaw/workspace/projects/crossfit-agent
+2026-03-20 13:56:16,268 - INFO - Log file: /Users/petekaik/.openclaw/workspace/projects/crossfit-agent/data/logs/cron_20260320_135616.log
+2026-03-20 13:56:16,268 - INFO - ==================================================
+2026-03-20 13:56:16,268 - INFO - Starting competition search
+2026-03-20 13:56:16,268 - INFO - ==================================================
+2026-03-20 13:56:16,302 - INFO - Exit code: 1
+STDERR: Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/petekaik/.openclaw/workspace/projects/crossfit-agent/src/main.py", line 15, in <module>
+    from scraper import CompetitionAggregator
+ModuleNotFoundError: No module named 'scraper'
+
+2026-03-20 13:56:16,302 - ERROR - ✗ Search failed
+2026-03-20 13:56:16,302 - INFO - ==================================================
+2026-03-20 13:56:16,302 - INFO - Cron job completed: search
+2026-03-20 13:56:16,302 - INFO - Success: False
+2026-03-20 13:56:16,302 - INFO - Total runs: 1
+2026-03-20 13:56:16,302 - INFO - Success count: 0
+2026-03-20 13:56:16,302 - INFO - Fail count: 1
+2026-03-20 13:56:16,302 - INFO - ==================================================

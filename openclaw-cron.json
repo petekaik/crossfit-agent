@@ -1,0 +1,61 @@
+{
+  "jobs": [
+    {
+      "name": "crossfit-search-daily",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 2 * * *",
+        "tz": "Europe/Helsinki"
+      },
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Run CrossFit competition search (ReppiScraper). Execute: cd /Users/petekaik/.openclaw/workspace/projects/crossfit-agent && python3 cron_runner.py search",
+        "model": "ollama/kimi-k2.5:cloud",
+        "timeoutSeconds": 300
+      },
+      "sessionTarget": "isolated",
+      "enabled": true,
+      "delivery": {
+        "mode": "announce"
+      }
+    },
+    {
+      "name": "crossfit-sync-daily",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 3 * * *",
+        "tz": "Europe/Helsinki"
+      },
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Sync CrossFit competitions to Google Calendar. Execute: cd /Users/petekaik/.openclaw/workspace/projects/crossfit-agent && python3 cron_runner.py sync",
+        "model": "ollama/kimi-k2.5:cloud",
+        "timeoutSeconds": 300
+      },
+      "sessionTarget": "isolated",
+      "enabled": true,
+      "delivery": {
+        "mode": "announce"
+      }
+    },
+    {
+      "name": "crossfit-full-weekly",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 2 * * 1",
+        "tz": "Europe/Helsinki"
+      },
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Weekly CrossFit update: Full search + sync (ReppiScraper). Execute: cd /Users/petekaik/.openclaw/workspace/projects/crossfit-agent && python3 cron_runner.py full",
+        "model": "ollama/kimi-k2.5:cloud",
+        "timeoutSeconds": 600
+      },
+      "sessionTarget": "isolated",
+      "enabled": true,
+      "delivery": {
+        "mode": "announce"
+      }
+    }
+  ]
+}

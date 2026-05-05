@@ -1,0 +1,46 @@
+2026-03-21 03:15:01,424 - INFO - Cron job started: sync
+2026-03-21 03:15:01,426 - INFO - Workspace: /Users/petekaik/.openclaw/workspace/projects/crossfit-agent
+2026-03-21 03:15:01,426 - INFO - Log file: /Users/petekaik/.openclaw/workspace/projects/crossfit-agent/data/logs/cron_20260321_031501.log
+2026-03-21 03:15:01,427 - INFO - ==================================================
+2026-03-21 03:15:01,427 - INFO - Starting calendar sync
+2026-03-21 03:15:01,427 - INFO - ==================================================
+2026-03-21 03:15:08,775 - INFO - ==================================================
+CrossFit Competition Tracker - Calendar Sync
+==================================================
+Started at: 2026-03-21T03:15:03.265712
+
+Loaded 12 competitions from file
+Using existing calendar: Urheilutapahtumat
+Error searching events: <HttpError 400 when requesting https://www.googleapis.com/calendar/v3/calendars/702187345e8cf4d7f486159b1347efe31d0345ee2bc4297edb9ceebb1e498db6%40group.calendar.google.com/events?timeMin=2025-07-25T00%3A00%3A00&timeMax=2025-08-08T00%3A00%3A00&q=CrossFit+Games+2025&singleEvents=true&alt=json returned "Bad Request". Details: "[{'domain': 'global', 'reason': 'badRequest', 'message': 'Bad Request'}]">
+Event created: https://www.google.com/calendar/event?eid=ZzA5M3Y1OGpuanZwbDE3cGlucTJlM3ViOGsgNzAyMTg3MzQ1ZThjZjRkN2Y0ODYxNTliMTM0N2VmZTMxZDAzNDVlZTJiYzQyOTdlZGI5Y2VlYmIxZTQ5OGRiNkBn
+Error searching events: <HttpError 400 when requesting https://www.googleapis.com/calendar/v3/calendars/702187345e8cf4d7f486159b1347efe31d0345ee2bc4297edb9ceebb1e498db6%40group.calendar.google.com/events?timeMin=2025-04-24T00%3A00%3A00&timeMax=2025-05-08T00%3A00%3A00&q=CrossFit+Semifinals+2025&singleEvents=true&alt=json returned "Bad Request". Details: "[{'domain': 'global', 'reason': 'badRequest', 'message': 'Bad Request'}]">
+Event created: https://www.google.com/calendar/event?eid=cGg2bDNyc2czMWlqdG9udWJnY2ZvOGI0MGcgNzAyMTg3MzQ1ZThjZjRkN2Y0ODYxNTliMTM0N2VmZTMxZDAzNDVlZTJiYzQyOTdlZGI5Y2VlYmIxZTQ5OGRiNkBn
+Error searching events: <HttpError 400 when requesting https://www.googleapis.com/calendar/v3/calendars/702187345e8cf4d7f486159b1347efe31d0345ee2bc4297edb9ceebb1e498db6%40group.calendar.google.com/events?timeMin=2026-07-17T00%3A00%3A00&timeMax=2026-07-31T00%3A00%3A00&q=CrossFit+Games+2026&singleEvents=true&alt=json returned "Bad Request". Details: "[{'domain': 'global', 'reason': 'badRequest', 'message': 'Bad Request'}]">
+Event created: https://www.google.com/calendar/event?eid=dWI1bHN2NnQ3ZHRjZnVtOGhubWZiMTA3Y2cgNzAyMTg3MzQ1ZThjZjRkN2Y0ODYxNTliMTM0N2VmZTMxZDAzNDVlZTJiYzQyOTdlZGI5Y2VlYmIxZTQ5OGRiNkBn
+Error searching events: <HttpError 400 when requesting https://www.googleapis.com/calendar/v3/calendars/702187345e8cf4d7f486159b1347efe31d0345ee2bc4297edb9ceebb1e498db6%40group.calendar.google.com/events?timeMin=2026-04-24T00%3A00%3A00&timeMax=2026-05-08T00%3A00%3A00&q=CrossFit+Semifinals+2026&singleEvents=true&alt=json returned "Bad Request". Details: "[{'domain': 'global', 'reason': 'badRequest', 'message': 'Bad Request'}]">
+Event created: https://www.google.com/calendar/event?eid=MTJ1ZTA5YnVwOWVlNWUwY29hdnZtanRpZGMgNzAyMTg3MzQ1ZThjZjRkN2Y0ODYxNTliMTM0N2VmZTMxZDAzNDVlZTJiYzQyOTdlZGI5Y2VlYmIxZTQ5OGRiNkBn
+Error searching events: <HttpError 400 when requesting https://www.googleapis.com/calendar/v3/calendars/702187345e8cf4d7f486159b1347efe31d0345ee2bc4297edb9ceebb1e498db6%40group.calendar.google.com/events?timeMin=2026-04-10T00%3A00%3A00&timeMax=2026-04-24T00%3A00%3A00&q=Mayhem+Classic+2026&singleEvents=true&alt=json returned "Bad Request". Details: "[{'domain': 'global', 'reason': 'badRequest', 'message': 'Bad Request'}]">
+Event created: https://www.google.com/calendar/event?eid=dWFqc21hOGgwcGdrbHR1cWcxMmx1dnRiZXMgNzAyMTg3MzQ1ZThjZjRkN2Y0ODYxNTliMTM0N2VmZTMxZDAzNDVlZTJiYzQyOTdlZGI5Y2VlYmIxZTQ5OGRiNkBn
+Error searching events: <HttpError 400 when requesting https://www.googleapis.com/calendar/v3/calendars/702187345e8cf4d7f486159b1347efe31d0345ee2bc4297edb9ceebb1e498db6%40group.calendar.google.com/events?timeMin=2026-06-04T00%3A00%3A00&timeMax=2026-06-18T00%3A00%3A00&q=Turku+Tuomiop%C3%A4iv%C3%A4&singleEvents=true&alt=json returned "Bad Request". Details: "[{'domain': 'global', 'reason': 'badRequest', 'message': 'Bad Request'}]">
+Event created: https://www.google.com/calendar/event?eid=ZmJjbTdiOGRsYnZuaXNlNXBjajh1YWFjNXMgNzAyMTg3MzQ1ZThjZjRkN2Y0ODYxNTliMTM0N2VmZTMxZDAzNDVlZTJiYzQyOTdlZGI5Y2VlYmIxZTQ5OGRiNkBn
+Error searching events: <HttpError 400 when requesting https://www.googleapis.com/calendar/v3/calendars/702187345e8cf4d7f486159b1347efe31d0345ee2bc4297edb9ceebb1e498db6%40group.calendar.google.com/events?timeMin=2026-06-29T00%3A00%3A00&timeMax=2026-07-13T00%3A00%3A00&q=Yyteri+Sandstorm&singleEvents=true&alt=json returned "Bad Request". Details: "[{'domain': 'global', 'reason': 'badRequest', 'message': 'Bad Request'}]">
+Event created: https://www.google.com/calendar/event?eid=bDYwb2s0MWhmaGIxMjFyb2NuZmFranJnMDggNzAyMTg3MzQ1ZThjZjRkN2Y0ODYxNTliMTM0N2VmZTMxZDAzNDVlZTJiYzQyOTdlZGI5Y2VlYmIxZTQ5OGRiNkBn
+Error searching events: <HttpError 400 when requesting https://www.googleapis.com/calendar/v3/calendars/702187345e8cf4d7f486159b1347efe31d0345ee2bc4297edb9ceebb1e498db6%40group.calendar.google.com/events?timeMin=2026-06-29T00%3A00%3A00&timeMax=2026-07-13T00%3A00%3A00&q=Unbroken+Karsinnat&singleEvents=true&alt=json returned "Bad Request". Details: "[{'domain': 'global', 'reason': 'badRequest', 'message': 'Bad Request'}]">
+Event created: https://www.google.com/calendar/event?eid=b2Y4Z2VhdTU4MzhlZDY5NHZhY2tkbjUwdjQgNzAyMTg3MzQ1ZThjZjRkN2Y0ODYxNTliMTM0N2VmZTMxZDAzNDVlZTJiYzQyOTdlZGI5Y2VlYmIxZTQ5OGRiNkBn
+Error searching events: <HttpError 400 when requesting https://www.googleapis.com/calendar/v3/calendars/702187345e8cf4d7f486159b1347efe31d0345ee2bc4297edb9ceebb1e498db6%40group.calendar.google.com/events?timeMin=2026-09-18T00%3A00%3A00&timeMax=2026-10-02T00%3A00%3A00&q=Unbroken+Finaalit&singleEvents=true&alt=json returned "Bad Request". Details: "[{'domain': 'global', 'reason': 'badRequest', 'message': 'Bad Request'}]">
+Event created: https://www.google.com/calendar/event?eid=bHYyNzdkYmY0cTVtN2xncm44ZG12M3A1dGMgNzAyMTg3MzQ1ZThjZjRkN2Y0ODYxNTliMTM0N2VmZTMxZDAzNDVlZTJiYzQyOTdlZGI5Y2VlYmIxZTQ5OGRiNkBn
+
+Sync results:
+  - Created: 9
+  - Updated: 0
+  - Skipped: 3
+  - Failed: 0
+
+2026-03-21 03:15:08,777 - INFO - ✓ Sync completed successfully
+2026-03-21 03:15:08,777 - INFO - ==================================================
+2026-03-21 03:15:08,777 - INFO - Cron job completed: sync
+2026-03-21 03:15:08,777 - INFO - Success: True
+2026-03-21 03:15:08,777 - INFO - Total runs: 2
+2026-03-21 03:15:08,777 - INFO - Success count: 1
+2026-03-21 03:15:08,777 - INFO - Fail count: 1
+2026-03-21 03:15:08,777 - INFO - ==================================================

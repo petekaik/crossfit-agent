@@ -1,0 +1,6 @@
+2026-03-24 02:06:56,248 - INFO - [cron_runner.py:461] - Cron job started: search
+2026-03-24 02:06:56,249 - INFO - [cron_runner.py:462] - Workspace: /Users/petekaik/.openclaw/workspace/projects/crossfit-agent
+2026-03-24 02:06:56,249 - INFO - [cron_runner.py:336] - ============================================================
+2026-03-24 02:06:56,249 - INFO - [cron_runner.py:337] - Starting competition search (ReppiScraper)
+2026-03-24 02:06:56,249 - INFO - [cron_runner.py:338] - ============================================================
+2026-03-24 02:06:56,249 - INFO - [cron_runner.py:269] - Running command: /usr/local/bin/python3 src/main.py search

@@ -1,0 +1,58 @@
+Vuonna 2026 "oikeaoppinen" tapa konfiguroida automaatio Google-ekosysteemissä on siirtynyt vahvasti pois perinteisistä, ladattavista JSON-avaintiedostoista (Service Account Keys) kohti dynaamisempia ja turvallisempia menetelmiä.
+
+Tässä on nykyaikainen (v. 2026) protokolla Google Calendar -automaation pystyttämiseen cron-ajastuksella.
+
+1. Strateginen valinta: Workload Identity Federation (WIF)
+Suurin muutos on se, että Google suosittelee välttämään staattisia avaintiedostoja. Jos cron-ajosi pyörii pilvialustalla (AWS, Azure, GitHub Actions) tai ympäristössä, jossa on OIDC-tuki (es esim. Keycloak), käytä Workload Identity Federationia.
+
+Miksi? Ei avainten kierrätystä, ei riskiä avaimen vuotamisesta GitHubiin.
+
+Miten? Luot Google Cloudiin "Identity Poolin", joka luottaa ulkoiseen palveluntarjoajaan ja antaa cron-ajollesi lyhytkestoisen access tokenin lennosta.
+
+2. Standalone-palvelin: Service Account + Public Key Upload
+Jos cron-ajo pyörii perinteisellä Linux-palvelimella ilman OIDC-identiteettiä, vuoden 2026 uusi standardi on oman julkisen avaimen lataaminen (Public Key Upload), joka on nyt siirtynyt Beta-vaiheesta yleiseen käyttöön.
+
+Luo palvelimellasi oma avainpari: openssl genrsa -out private.pem 2048.
+
+Luo julkinen avain: openssl rsa -in private.pem -pubout -out public.pem.
+
+Lataa public.pem Google Cloud Consolen Service Account -asetuksiin.
+
+Hyöty: Googlella ei ole koskaan hallussaan yksityistä avaintasi, mikä parantaa tietoturvaa merkittävästi verrattuna perinteiseen "lataa JSON-avain" -malliin.
+
+3. Kalenterin käyttöoikeudet (Kaksi tapaa)
+Kun tekninen yhteys on kunnossa, sinun on annettava Service Accountille oikeus muokata kalenteria.
+
+Vaihtoehto A: Kalenterin jakaminen (Yksinkertaisin)
+
+Jos automaatio päivittää vain yhtä tai muutamaa tiettyä kalenteria:
+
+Kopioi Service Accountin sähköpostiosoite (nimi@projekti.iam.gserviceaccount.com).
+
+Mene Google Kalenterin asetuksiin ja jaa kalenteri tälle osoitteelle (oikeudet: Make changes to events).
+
+Vaihtoehto B: Domain-wide Delegation (Organisaatiotaso)
+
+Jos kyseessä on Google Workspace ja automaation pitää muokata useiden työntekijöiden kalentereita:
+
+Aktivoi Domain-wide Delegation Service Accountille.
+
+Workspace-adminin on sallittava SA:n Client ID Admin Consolessa (Security > API Controls > Domain Wide Delegation).
+
+Koodissa käytetään "impersonation"-ominaisuutta, jolloin SA toimii tietyn käyttäjän nimissä.
+
+4. Huomioi uusi "2026 API Tiering"
+Toukokuun 1. päivä 2026 Google Workspace API:t (Calendar, Drive, Gmail) siirtyivät uuteen standardisoituun kiintiömalliin:
+
+Laskutusvaatimus: Jos cron-ajosi tekee suuria määriä muutoksia (yli standardikiintiön), projektilla on nyt oltava Google Cloud Billing kytkettynä päälle, vaikka käyttö pysyisi ilmaisen rajan puitteissa.
+
+MCP-tuki: Jos automaatiosi on tekoälypohjainen (AI Agent), kannattaa tutustua uuteen Model Context Protocol (MCP) -palvelimeen Google Calendarille, joka mahdollistaa kalenteritapahtumien hallinnan luonnollisella kielellä rakenteellisen API-kutsun sijaan.
+
+Tiivistetty tarkistuslista (2026 Best Practices)
+Vaihe	Toimenpide	Työkalu
+Identiteetti	Käytä WIF:iä tai lataa oma julkinen avain.	IAM & Admin
+API	Aktivoi Google Calendar API v3.	API Library
+Pääsy	Jaa kalenteri suoraan SA:lle (Least Privilege).	Calendar UI
+Koodi	Käytä virallisia google-auth-library -kirjastoja.	npm/pip/go
+Kiintiöt	Varmista, että Cloud-projektiin on liitetty laskutustili.	Billing
+Varoitus: Jos löydät vanhoja ohjeita, jotka kehottavat lataamaan credentials.json -avaimen suoraan koneellesi, ne ovat vanhentunutta ja turvatonta käytäntöä. Vuonna 2026 ensisijainen tapa on aina "keyless" eli avaimeton tunnistautuminen.

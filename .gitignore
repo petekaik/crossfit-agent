@@ -1,0 +1,22 @@
+# Google Service Account — private key (do NOT commit)
+*.pem
+
+# Environment variables (contains SA credentials)
+.env
+
+# OAuth credentials and tokens (user-specific)
+credentials.json
+token.json
+
+# Python virtualenv
+venv/
+*.pyc
+__pycache__/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

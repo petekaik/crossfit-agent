@@ -1,0 +1,33 @@
+2026-03-27 02:02:00,872 - INFO - [cron_runner.py:461] - Cron job started: search
+2026-03-27 02:02:00,873 - INFO - [cron_runner.py:462] - Workspace: /Users/petekaik/.openclaw/workspace/projects/crossfit-agent
+2026-03-27 02:02:00,873 - INFO - [cron_runner.py:336] - ============================================================
+2026-03-27 02:02:00,873 - INFO - [cron_runner.py:337] - Starting competition search (ReppiScraper)
+2026-03-27 02:02:00,873 - INFO - [cron_runner.py:338] - ============================================================
+2026-03-27 02:02:00,873 - INFO - [cron_runner.py:269] - Running command: /usr/local/bin/python3 src/main.py search
+2026-03-27 02:02:13,405 - INFO - [cron_runner.py:346] - ==================================================
+CrossFit Competition Tracker - Search
+==================================================
+Started at: 2026-03-27T02:02:03.198152
+
+FinnishCompetitionScraper: Found 6 competitions
+Deduplicated: Turku Tuomiopäivä
+Deduplicated: Yyteri Sandstorm
+Deduplicated: Unbroken Karsinnat
+Deduplicated: Unbroken Finaalit
+Deduplicated: Vaasa Showdown
+Deduplicated: Finnish CrossFit Championship
+
+Found 19 competitions
+  - Elite: 16
+  - Hobby: 3
+Saved 19 competitions to /Users/petekaik/.openclaw/workspace/projects/crossfit-agent/data/competitions.json
+
+2026-03-27 02:02:13,406 - INFO - [cron_runner.py:349] - ✓ Search completed successfully
+2026-03-27 02:02:13,406 - INFO - [cron_runner.py:496] - ============================================================
+2026-03-27 02:02:13,406 - INFO - [cron_runner.py:497] - Cron job completed: search
+2026-03-27 02:02:13,406 - INFO - [cron_runner.py:498] - Success: True
+2026-03-27 02:02:13,406 - INFO - [cron_runner.py:499] - Total runs: 6
+2026-03-27 02:02:13,407 - INFO - [cron_runner.py:500] - Success count: 4
+2026-03-27 02:02:13,407 - INFO - [cron_runner.py:501] - Fail count: 2
+2026-03-27 02:02:13,407 - INFO - [cron_runner.py:502] - Consecutive failures: 0
+2026-03-27 02:02:13,407 - INFO - [cron_runner.py:503] - ============================================================

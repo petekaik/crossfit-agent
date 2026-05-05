@@ -1,0 +1,48 @@
+2026-03-23 03:14:09,724 - INFO - [cron_runner.py:461] - Cron job started: sync
+2026-03-23 03:14:09,724 - INFO - [cron_runner.py:462] - Workspace: /Users/petekaik/.openclaw/workspace/projects/crossfit-agent
+2026-03-23 03:14:09,724 - INFO - [cron_runner.py:359] - ============================================================
+2026-03-23 03:14:09,724 - INFO - [cron_runner.py:360] - Starting calendar sync
+2026-03-23 03:14:09,725 - INFO - [cron_runner.py:361] - ============================================================
+2026-03-23 03:14:09,725 - INFO - [cron_runner.py:269] - Running command: /usr/local/bin/python3 src/main.py sync
+2026-03-23 03:14:17,610 - INFO - [cron_runner.py:370] - ==================================================
+CrossFit Competition Tracker - Calendar Sync
+==================================================
+Started at: 2026-03-23T03:14:12.024949
+
+Loaded 12 competitions from file
+Using existing calendar: Urheilutapahtumat
+Deduplicated: 12 -> 12 competitions
+Error searching events: <HttpError 400 when requesting https://www.googleapis.com/calendar/v3/calendars/702187345e8cf4d7f486159b1347efe31d0345ee2bc4297edb9ceebb1e498db6%40group.calendar.google.com/events?timeMin=2025-08-01T00%3A00%3A00&timeMax=2025-08-02T00%3A00%3A00&singleEvents=true&alt=json returned "Bad Request". Details: "[{'domain': 'global', 'reason': 'badRequest', 'message': 'Bad Request'}]">
+Event created: https://www.google.com/calendar/event?eid=ZmlwZXNwMDA1cWJlY244YWp2aDNsdjBzMDggNzAyMTg3MzQ1ZThjZjRkN2Y0ODYxNTliMTM0N2VmZTMxZDAzNDVlZTJiYzQyOTdlZGI5Y2VlYmIxZTQ5OGRiNkBn
+Error searching events: <HttpError 400 when requesting https://www.googleapis.com/calendar/v3/calendars/702187345e8cf4d7f486159b1347efe31d0345ee2bc4297edb9ceebb1e498db6%40group.calendar.google.com/events?timeMin=2025-05-01T00%3A00%3A00&timeMax=2025-05-02T00%3A00%3A00&singleEvents=true&alt=json returned "Bad Request". Details: "[{'domain': 'global', 'reason': 'badRequest', 'message': 'Bad Request'}]">
+Event created: https://www.google.com/calendar/event?eid=bmZtcDNtazNscmdyazVqbW01bTdyZjJzMm8gNzAyMTg3MzQ1ZThjZjRkN2Y0ODYxNTliMTM0N2VmZTMxZDAzNDVlZTJiYzQyOTdlZGI5Y2VlYmIxZTQ5OGRiNkBn
+Error searching events: <HttpError 400 when requesting https://www.googleapis.com/calendar/v3/calendars/702187345e8cf4d7f486159b1347efe31d0345ee2bc4297edb9ceebb1e498db6%40group.calendar.google.com/events?timeMin=2026-07-24T00%3A00%3A00&timeMax=2026-07-25T00%3A00%3A00&singleEvents=true&alt=json returned "Bad Request". Details: "[{'domain': 'global', 'reason': 'badRequest', 'message': 'Bad Request'}]">
+Event created: https://www.google.com/calendar/event?eid=NTduMDlvc2hxZDltbTkxZmVnNTVqcGVoZzggNzAyMTg3MzQ1ZThjZjRkN2Y0ODYxNTliMTM0N2VmZTMxZDAzNDVlZTJiYzQyOTdlZGI5Y2VlYmIxZTQ5OGRiNkBn
+Error searching events: <HttpError 400 when requesting https://www.googleapis.com/calendar/v3/calendars/702187345e8cf4d7f486159b1347efe31d0345ee2bc4297edb9ceebb1e498db6%40group.calendar.google.com/events?timeMin=2026-05-01T00%3A00%3A00&timeMax=2026-05-02T00%3A00%3A00&singleEvents=true&alt=json returned "Bad Request". Details: "[{'domain': 'global', 'reason': 'badRequest', 'message': 'Bad Request'}]">
+Event created: https://www.google.com/calendar/event?eid=ZHRxMGJnb29maWlocWJ1NDVvM3Fza2UzaWcgNzAyMTg3MzQ1ZThjZjRkN2Y0ODYxNTliMTM0N2VmZTMxZDAzNDVlZTJiYzQyOTdlZGI5Y2VlYmIxZTQ5OGRiNkBn
+Error searching events: <HttpError 400 when requesting https://www.googleapis.com/calendar/v3/calendars/702187345e8cf4d7f486159b1347efe31d0345ee2bc4297edb9ceebb1e498db6%40group.calendar.google.com/events?timeMin=2026-04-17T00%3A00%3A00&timeMax=2026-04-18T00%3A00%3A00&singleEvents=true&alt=json returned "Bad Request". Details: "[{'domain': 'global', 'reason': 'badRequest', 'message': 'Bad Request'}]">
+Event created: https://www.google.com/calendar/event?eid=N2hwYTQ0azF0bGV0ZWdtNDgxcnU4MjBoZnMgNzAyMTg3MzQ1ZThjZjRkN2Y0ODYxNTliMTM0N2VmZTMxZDAzNDVlZTJiYzQyOTdlZGI5Y2VlYmIxZTQ5OGRiNkBn
+Error searching events: <HttpError 400 when requesting https://www.googleapis.com/calendar/v3/calendars/702187345e8cf4d7f486159b1347efe31d0345ee2bc4297edb9ceebb1e498db6%40group.calendar.google.com/events?timeMin=2026-06-11T00%3A00%3A00&timeMax=2026-06-12T00%3A00%3A00&singleEvents=true&alt=json returned "Bad Request". Details: "[{'domain': 'global', 'reason': 'badRequest', 'message': 'Bad Request'}]">
+Event created: https://www.google.com/calendar/event?eid=cGh2bjh0N2JkYWRqYXI2MGhiYXV2b3AxbzggNzAyMTg3MzQ1ZThjZjRkN2Y0ODYxNTliMTM0N2VmZTMxZDAzNDVlZTJiYzQyOTdlZGI5Y2VlYmIxZTQ5OGRiNkBn
+Error searching events: <HttpError 400 when requesting https://www.googleapis.com/calendar/v3/calendars/702187345e8cf4d7f486159b1347efe31d0345ee2bc4297edb9ceebb1e498db6%40group.calendar.google.com/events?timeMin=2026-07-06T00%3A00%3A00&timeMax=2026-07-07T00%3A00%3A00&singleEvents=true&alt=json returned "Bad Request". Details: "[{'domain': 'global', 'reason': 'badRequest', 'message': 'Bad Request'}]">
+Event created: https://www.google.com/calendar/event?eid=dDlzMHBsNXZ2aHNsNXFldHFiNWV0a2Z0YmsgNzAyMTg3MzQ1ZThjZjRkN2Y0ODYxNTliMTM0N2VmZTMxZDAzNDVlZTJiYzQyOTdlZGI5Y2VlYmIxZTQ5OGRiNkBn
+Error searching events: <HttpError 400 when requesting https://www.googleapis.com/calendar/v3/calendars/702187345e8cf4d7f486159b1347efe31d0345ee2bc4297edb9ceebb1e498db6%40group.calendar.google.com/events?timeMin=2026-07-06T00%3A00%3A00&timeMax=2026-07-07T00%3A00%3A00&singleEvents=true&alt=json returned "Bad Request". Details: "[{'domain': 'global', 'reason': 'badRequest', 'message': 'Bad Request'}]">
+Event created: https://www.google.com/calendar/event?eid=OGE4c3JpMHRpdm1yNmZndmNycnI5N241MGMgNzAyMTg3MzQ1ZThjZjRkN2Y0ODYxNTliMTM0N2VmZTMxZDAzNDVlZTJiYzQyOTdlZGI5Y2VlYmIxZTQ5OGRiNkBn
+Error searching events: <HttpError 400 when requesting https://www.googleapis.com/calendar/v3/calendars/702187345e8cf4d7f486159b1347efe31d0345ee2bc4297edb9ceebb1e498db6%40group.calendar.google.com/events?timeMin=2026-09-25T00%3A00%3A00&timeMax=2026-09-26T00%3A00%3A00&singleEvents=true&alt=json returned "Bad Request". Details: "[{'domain': 'global', 'reason': 'badRequest', 'message': 'Bad Request'}]">
+Event created: https://www.google.com/calendar/event?eid=aXBmZXBiNjdtNHBsdHBibnIyNDRmZXNkdmcgNzAyMTg3MzQ1ZThjZjRkN2Y0ODYxNTliMTM0N2VmZTMxZDAzNDVlZTJiYzQyOTdlZGI5Y2VlYmIxZTQ5OGRiNkBn
+
+Sync results:
+  - Created: 9
+  - Updated: 0
+  - Skipped: 3
+  - Failed: 0
+
+2026-03-23 03:14:17,614 - INFO - [cron_runner.py:373] - ✓ Sync completed successfully
+2026-03-23 03:14:17,615 - INFO - [cron_runner.py:496] - ============================================================
+2026-03-23 03:14:17,615 - INFO - [cron_runner.py:497] - Cron job completed: sync
+2026-03-23 03:14:17,615 - INFO - [cron_runner.py:498] - Success: True
+2026-03-23 03:14:17,615 - INFO - [cron_runner.py:499] - Total runs: 4
+2026-03-23 03:14:17,615 - INFO - [cron_runner.py:500] - Success count: 2
+2026-03-23 03:14:17,615 - INFO - [cron_runner.py:501] - Fail count: 2
+2026-03-23 03:14:17,615 - INFO - [cron_runner.py:502] - Consecutive failures: 0
+2026-03-23 03:14:17,615 - INFO - [cron_runner.py:503] - ============================================================

@@ -1,0 +1,6 @@
+2026-03-21 02:06:19,686 - INFO - Cron job started: search
+2026-03-21 02:06:19,687 - INFO - Workspace: /Users/petekaik/.openclaw/workspace/projects/crossfit-agent
+2026-03-21 02:06:19,687 - INFO - Log file: /Users/petekaik/.openclaw/workspace/projects/crossfit-agent/data/logs/cron_20260321_020619.log
+2026-03-21 02:06:19,687 - INFO - ==================================================
+2026-03-21 02:06:19,688 - INFO - Starting competition search
+2026-03-21 02:06:19,688 - INFO - ==================================================
