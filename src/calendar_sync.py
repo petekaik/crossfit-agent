@@ -344,7 +344,9 @@ class GoogleCalendarSync:
             # All-day event: no reminders (season periods are just informational)
             event_body['start'] = {'date': event.start.strftime('%Y-%m-%d')}
             event_body['end'] = {'date': event.end.strftime('%Y-%m-%d')}
-            event_body['reminders'] = {'useDefault': False}
+            event_body['reminders'] = {'useDefault': False, 'overrides': [
+                {'method': 'popup', 'minutes': 0}
+            ]}
         else:
             event_body['start'] = {
                 'dateTime': event.start.isoformat(),
@@ -385,10 +387,11 @@ class GoogleCalendarSync:
         }
 
         if event.is_all_day:
-            # All-day event: no reminders
             event_body['start'] = {'date': event.start.strftime('%Y-%m-%d')}
             event_body['end'] = {'date': event.end.strftime('%Y-%m-%d')}
-            event_body['reminders'] = {'useDefault': False}
+            event_body['reminders'] = {'useDefault': False, 'overrides': [
+                {'method': 'popup', 'minutes': 0}
+            ]}
         else:
             event_body['start'] = {
                 'dateTime': event.start.isoformat(),
