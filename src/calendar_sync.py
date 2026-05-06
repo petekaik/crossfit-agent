@@ -42,6 +42,7 @@ class CalendarEvent:
     location: str
     timezone: str = DEFAULT_TIMEZONE
     source_url: Optional[str] = None
+    is_all_day: bool = False
 
 
 class GoogleCalendarSync:
@@ -283,27 +284,42 @@ class GoogleCalendarSync:
             return None
         
         # Build description
-        description_parts = [competition.description]
+        description_parts = [competition.description] if competition.description else []
         
         if competition.info_url:
             description_parts.append(f"\nInfo: {competition.info_url}")
-        if competition.youtube_url:
-            description_parts.append(f"\nYouTube: {competition.youtube_url}")
         if competition.ticket_url:
             description_parts.append(f"\nTickets: {competition.ticket_url}")
         
+        # Video feeds (supports multiple streams — morning/afternoon/event-specific)
+        if competition.video_feeds:
+            if len(competition.video_feeds) == 1 and not competition.video_feeds[0].get('label'):
+                description_parts.append(f"\nYouTube: {competition.video_feeds[0]['url']}")
+            else:
+                feeds = "\n".join(
+                    f"  {vf.get('label', 'Stream')}: {vf['url']}"
+                    for vf in competition.video_feeds
+                )
+                description_parts.append(f"\nVideofeedit:\n{feeds}")
+        elif competition.youtube_url:
+            description_parts.append(f"\nYouTube: {competition.youtube_url}")
+        
         description_parts.append(f"\nLevel: {competition.level.value}")
         
-        # Calculate end date (default to start + 1 day if not specified)
+        if competition.is_all_day:
+            description_parts.append("\n(Viitteellinen ajanjakso — ei yksittäinen kisatapahtuma)")
+        
+        # Calculate end date
         end_date = competition.date_end or (competition.date_start + timedelta(days=1))
         
         return CalendarEvent(
             summary=f"[CrossFit] {competition.name}",
-            description="\n".join(description_parts),
+            description="\n".join(description_parts) if description_parts else "",
             start=competition.date_start,
             end=end_date,
             location=f"{competition.location}, {competition.country}",
-            source_url=competition.info_url
+            source_url=competition.info_url,
+            is_all_day=competition.is_all_day,
         )
     
     def create_event(self, event: CalendarEvent) -> Optional[str]:
@@ -316,21 +332,27 @@ class GoogleCalendarSync:
             'summary': event.summary,
             'description': event.description,
             'location': event.location,
-            'start': {
-                'dateTime': event.start.isoformat(),
-                'timeZone': event.timezone,
-            },
-            'end': {
-                'dateTime': event.end.isoformat(),
-                'timeZone': event.timezone,
-            },
             'reminders': {
                 'useDefault': False,
                 'overrides': [
-                    {'method': 'popup', 'minutes': 60},        # 1 hour before
+                    {'method': 'popup', 'minutes': 60},
                 ],
             },
         }
+        
+        if event.is_all_day:
+            # All-day event: use 'date' (no timezone), end is exclusive
+            event_body['start'] = {'date': event.start.strftime('%Y-%m-%d')}
+            event_body['end'] = {'date': event.end.strftime('%Y-%m-%d')}
+        else:
+            event_body['start'] = {
+                'dateTime': event.start.isoformat(),
+                'timeZone': event.timezone,
+            }
+            event_body['end'] = {
+                'dateTime': event.end.isoformat(),
+                'timeZone': event.timezone,
+            }
         
         try:
             result = self.service.events().insert(
@@ -342,6 +364,48 @@ class GoogleCalendarSync:
         except HttpError as e:
             print(f"Error creating event: {e}")
             return None
+
+    def update_event(self, event_id: str, event: CalendarEvent) -> bool:
+        """Update an existing event in Google Calendar."""
+        if not self.service:
+            print("Error: Not authenticated")
+            return False
+
+        event_body = {
+            'summary': event.summary,
+            'description': event.description,
+            'location': event.location,
+            'reminders': {
+                'useDefault': False,
+                'overrides': [
+                    {'method': 'popup', 'minutes': 60},
+                ],
+            },
+        }
+
+        if event.is_all_day:
+            event_body['start'] = {'date': event.start.strftime('%Y-%m-%d')}
+            event_body['end'] = {'date': event.end.strftime('%Y-%m-%d')}
+        else:
+            event_body['start'] = {
+                'dateTime': event.start.isoformat(),
+                'timeZone': event.timezone,
+            }
+            event_body['end'] = {
+                'dateTime': event.end.isoformat(),
+                'timeZone': event.timezone,
+            }
+
+        try:
+            self.service.events().update(
+                calendarId=self.calendar_id,
+                eventId=event_id,
+                body=event_body
+            ).execute()
+            return True
+        except HttpError as e:
+            print(f"Error updating event: {e}")
+            return False
     
     def _build_event_cache(self) -> dict:
         """Build a lookup cache of all existing events: (summary, start_date) -> event_id.
@@ -371,6 +435,7 @@ class GoogleCalendarSync:
                     summary = ev.get('summary', '')
                     # Normalize dashes in cache key for matching
                     summary_norm = re.sub(r'[—–-]', '-', summary)
+                    # All-day events use 'date', timed events use 'dateTime'
                     start = ev.get('start', {}).get('dateTime', ev.get('start', {}).get('date', ''))
                     key = (summary_norm, start[:10])  # (name, date)
                     cache[key] = ev['id']
@@ -502,11 +567,12 @@ class GoogleCalendarSync:
             
             if existing_id:
                 if update_existing:
-                    print(f"Updating existing event for {comp.name}")
-                    # TODO: Implement actual update
-                    results['updated'] += 1
+                    event = self.competition_to_event(comp)
+                    if event and self.update_event(existing_id, event):
+                        results['updated'] += 1
+                    else:
+                        results['failed'] += 1
                 else:
-                    print(f"Event already exists for {comp.name}, skipping")
                     results['skipped'] += 1
                 continue
             

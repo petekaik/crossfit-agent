@@ -49,10 +49,13 @@ def save_competitions(competitions: list, filepath: Path = COMPETITIONS_FILE):
             "location": comp.location,
             "country": comp.country,
             "level": comp.level.value,
+            "event_type": comp.event_type.value,
             "youtube_url": comp.youtube_url,
             "ticket_url": comp.ticket_url,
             "info_url": comp.info_url,
-            "description": comp.description
+            "description": comp.description,
+            "is_all_day": comp.is_all_day,
+            "video_feeds": comp.video_feeds if comp.video_feeds else None,
         })
     
     with open(filepath, 'w', encoding='utf-8') as f:
@@ -138,7 +141,7 @@ def run_sync(dry_run: bool = False, console_auth: bool = False):
         return False
     
     # Convert dicts back to Competition objects
-    from scraper import Competition, CompetitionLevel
+    from scraper import Competition, CompetitionLevel, EventType
     competitions = []
     for item in data:
         comp = Competition(
@@ -148,10 +151,13 @@ def run_sync(dry_run: bool = False, console_auth: bool = False):
             location=item['location'],
             country=item['country'],
             level=CompetitionLevel(item['level']),
+            event_type=EventType(item.get('event_type', 'independent_elite')),
             youtube_url=item.get('youtube_url'),
             ticket_url=item.get('ticket_url'),
             info_url=item.get('info_url'),
-            description=item.get('description', '')
+            description=item.get('description', ''),
+            is_all_day=item.get('is_all_day', False),
+            video_feeds=item.get('video_feeds'),
         )
         competitions.append(comp)
     

@@ -58,6 +58,8 @@ class Competition:
     ticket_url: Optional[str] = None
     info_url: Optional[str] = None
     description: str = ""
+    is_all_day: bool = False           # True = season period, all-day calendar event
+    video_feeds: List[Dict[str, str]] = field(default_factory=list)  # e.g. [{"label": "Morning", "url": "..."}]
 
 
 # ──────────────────────────────────────────────
@@ -71,7 +73,7 @@ def _d(date_str: Optional[str]) -> Optional[datetime]:
     return datetime.strptime(date_str, "%Y-%m-%d")
 
 def _c(name, start, end, location, country, level, event_type=EventType.INDEPENDENT_ELITE,
-       youtube=None, ticket=None, info=None, description=""):
+       youtube=None, ticket=None, info=None, description="", is_all_day=False, video_feeds=None):
     """Factory for Competition with optional end date."""
     return Competition(
         name=name,
@@ -85,6 +87,8 @@ def _c(name, start, end, location, country, level, event_type=EventType.INDEPEND
         ticket_url=ticket,
         info_url=info,
         description=description,
+        is_all_day=is_all_day,
+        video_feeds=video_feeds or [],
     )
 
 
@@ -177,27 +181,33 @@ class CrossFitGamesScraper:
             description="Masters CrossFit Games",
         ))
 
-        # All semifinal events
+        # All semifinal events — online events are season periods (all-day)
+        ONLINE_SEMIS = {"Age-Group Online Semifinal", "Team Online Semifinals",
+                        "Individual Online Semifinals"}
         for name, start, end, loc, country, info, ticket, yt, desc in self.SEMIFINALS_2026:
+            is_ad = name in ONLINE_SEMIS
             comps.append(_c(
                 name, start, end, loc, country, CompetitionLevel.ELITE,
                 EventType.CROSSFIT_SEMIFINAL,
                 youtube=yt, ticket=ticket, info=info, description=desc,
+                is_all_day=is_ad,
             ))
 
-        # CrossFit Open + Quarterfinals (for reference)
+        # CrossFit Open + Quarterfinals (season periods — all-day)
         comps.append(_c(
             "CrossFit Open 2026", "2026-02-26", "2026-03-16",
             "Worldwide", "Various", CompetitionLevel.ELITE,
             EventType.CROSSFIT_GAMES,
             info=f"{self.BASE_URL}/open",
             description="CrossFit Open — worldwide online qualifier",
+            is_all_day=True,
         ))
         comps.append(_c(
             "CrossFit Quarterfinals 2026", "2026-03-26", "2026-03-30",
             "Worldwide", "Various", CompetitionLevel.ELITE,
             EventType.CROSSFIT_GAMES,
             description="CrossFit Quarterfinals — top 25% from Open",
+            is_all_day=True,
         ))
 
         # CrossFit Games 2025 (past, for historical context)
@@ -281,7 +291,7 @@ class WFPCompetitionScraper:
             description="WFP partner event",
         ))
 
-        # Online qualifiers (informational only)
+        # Online qualifiers (season periods — all-day)
         for name, dates, desc in [
             ("WFP Tour Stop 1 Qualifier", ("2026-02-18", "2026-03-04"),
              "Online qualifier for London Pro"),
@@ -296,6 +306,7 @@ class WFPCompetitionScraper:
                 EventType.WFP_TOUR,
                 info="https://worldfitnessproject.com/tour/tour-overview",
                 description=desc,
+                is_all_day=True,
             ))
 
         return comps
@@ -400,12 +411,14 @@ class ReppiScraper:
             "date_start": "2026-07-06", "date_end": "2026-07-26",
             "location": "Yyteri, Pori", "level": "elite",
             "description": "Finaalitapahtuma Yyterissä — elite + hobby",
+            "is_all_day": True,
         },
         {
             "name": "Unbroken Karsinnat",
             "date_start": "2026-07-06", "date_end": "2026-07-26",
             "location": "Online", "level": "hobby",
             "description": "Unbroken-kisojen online-karsinnat",
+            "is_all_day": True,
         },
         {
             "name": "Unbroken Finaalit",
@@ -446,6 +459,7 @@ class ReppiScraper:
                     EventType.FINNISH,
                     info=f"{self.BASE_URL}/events",
                     description=data.get("description", ""),
+                    is_all_day=data.get("is_all_day", False),
                 ))
             except Exception as e:
                 logger.warning(f"Error creating Finnish event {data['name']}: {e}")
@@ -683,6 +697,8 @@ class CompetitionAggregator:
                 "ticket_url": comp.ticket_url,
                 "info_url": comp.info_url,
                 "description": comp.description,
+                "is_all_day": comp.is_all_day,
+                "video_feeds": comp.video_feeds if comp.video_feeds else None,
             })
         return json.dumps(data, indent=2, ensure_ascii=False)
 

@@ -6,10 +6,13 @@
     "location": "Albany, NY",
     "country": "USA",
     "level": "elite",
+    "event_type": "crossfit_games",
     "youtube_url": "https://www.youtube.com/@CrossFitGamesTV",
     "ticket_url": null,
     "info_url": null,
-    "description": ""
+    "description": "",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "The Fittest Experience (TFX)",
@@ -18,10 +21,13 @@
     "location": "Williamson County, TX",
     "country": "USA",
     "level": "elite",
+    "event_type": "independent_elite",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://thefittestexperience.com",
-    "description": "Major early-season elite event. Past event."
+    "description": "Major early-season elite event. Past event.",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "WFP Tour Stop 1 Qualifier",
@@ -30,10 +36,13 @@
     "location": "Online",
     "country": "Worldwide",
     "level": "elite",
+    "event_type": "wfp_tour",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://worldfitnessproject.com/tour/tour-overview",
-    "description": "Online qualifier for London Pro"
+    "description": "Online qualifier for London Pro",
+    "is_all_day": true,
+    "video_feeds": null
   },
   {
     "name": "CrossFit Open 2026",
@@ -42,10 +51,13 @@
     "location": "Worldwide",
     "country": "Various",
     "level": "elite",
+    "event_type": "crossfit_games",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://games.crossfit.com/open",
-    "description": "CrossFit Open — worldwide online qualifier"
+    "description": "CrossFit Open — worldwide online qualifier",
+    "is_all_day": true,
+    "video_feeds": null
   },
   {
     "name": "Wodapalooza Miami Beach",
@@ -54,10 +66,13 @@
     "location": "Miami Beach, FL",
     "country": "USA",
     "level": "elite",
+    "event_type": "independent_elite",
     "youtube_url": "https://www.youtube.com/@WodapaloozaFitnessFestival",
     "ticket_url": null,
     "info_url": "https://wodapalooza.com",
-    "description": "Largest fitness festival — elite + community. Past event."
+    "description": "Largest fitness festival — elite + community. Past event.",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "HYROX Copenhagen",
@@ -66,10 +81,13 @@
     "location": "Copenhagen",
     "country": "Denmark",
     "level": "elite",
+    "event_type": "hyrox",
     "youtube_url": "https://www.youtube.com/@HYROX",
     "ticket_url": null,
     "info_url": null,
-    "description": "HYROX Copenhagen"
+    "description": "HYROX Copenhagen",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "HYROX Berlin",
@@ -78,10 +96,13 @@
     "location": "Berlin",
     "country": "Germany",
     "level": "elite",
+    "event_type": "hyrox",
     "youtube_url": "https://www.youtube.com/@HYROX",
     "ticket_url": null,
     "info_url": null,
-    "description": ""
+    "description": "",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "CrossFit Quarterfinals 2026",
@@ -90,10 +111,13 @@
     "location": "Worldwide",
     "country": "Various",
     "level": "elite",
+    "event_type": "crossfit_games",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": null,
-    "description": "CrossFit Quarterfinals — top 25% from Open"
+    "description": "CrossFit Quarterfinals — top 25% from Open",
+    "is_all_day": true,
+    "video_feeds": null
   },
   {
     "name": "HYROX Stockholm",
@@ -102,10 +126,13 @@
     "location": "Stockholm",
     "country": "Sweden",
     "level": "elite",
+    "event_type": "hyrox",
     "youtube_url": "https://www.youtube.com/@HYROX",
     "ticket_url": null,
     "info_url": null,
-    "description": "HYROX Stockholm"
+    "description": "HYROX Stockholm",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "HYROX London",
@@ -114,10 +141,13 @@
     "location": "London",
     "country": "UK",
     "level": "elite",
+    "event_type": "hyrox",
     "youtube_url": "https://www.youtube.com/@HYROX",
     "ticket_url": null,
     "info_url": null,
-    "description": ""
+    "description": "",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "Mayhem Classic",
@@ -126,10 +156,13 @@
     "location": "Cookeville, TN",
     "country": "USA",
     "level": "elite",
+    "event_type": "crossfit_semifinal",
     "youtube_url": "https://www.youtube.com/@CFProjectMayhem/streams",
     "ticket_url": "https://www.tickettailor.com/events/crossfitmayhem/2069760",
     "info_url": "https://mayhemclassic.com",
-    "description": "CrossFit Semifinal — 3M/3W Games spots"
+    "description": "CrossFit Semifinal — 3M/3W Games spots",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "Athens Throwdown (WFP Partner)",
@@ -138,10 +171,13 @@
     "location": "Athens",
     "country": "Greece",
     "level": "elite",
+    "event_type": "wfp_partner",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": null,
-    "description": "WFP partner — 1st place → Finals invite (past event)"
+    "description": "WFP partner — 1st place → Finals invite (past event)",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "Legends Championship",
@@ -150,10 +186,13 @@
     "location": "Del Mar, CA",
     "country": "USA",
     "level": "elite",
+    "event_type": "crossfit_semifinal",
     "youtube_url": "https://www.floelite.com/signup?redirect=%2Flive%2F248339",
     "ticket_url": "https://competitioncorner.net/events/20036/merchandise?ticketsOnly=true",
     "info_url": "https://legendscomp.com/legends-del-mar/",
-    "description": "CrossFit Semifinal — Ind 2M/2W + Masters"
+    "description": "CrossFit Semifinal — Ind 2M/2W + Masters",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "CRASH Crescendo",
@@ -162,10 +201,13 @@
     "location": "TBD",
     "country": "USA",
     "level": "elite",
+    "event_type": "independent_elite",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://crashcrucible.com",
-    "description": "CRASH Crescendo — elite functional fitness + strongman"
+    "description": "CRASH Crescendo — elite functional fitness + strongman",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "Copa Sur",
@@ -174,10 +216,13 @@
     "location": "São José, SC",
     "country": "Brazil",
     "level": "elite",
+    "event_type": "crossfit_semifinal",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://cfcopasur.com/",
-    "description": "CrossFit Semifinal — Ind 2M/2W + 1 Team"
+    "description": "CrossFit Semifinal — Ind 2M/2W + 1 Team",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "Far East Throwdown",
@@ -186,10 +231,13 @@
     "location": "Busan",
     "country": "South Korea",
     "level": "elite",
+    "event_type": "crossfit_semifinal",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://www.fareastthrowdown.com/",
-    "description": "CrossFit Semifinal — Ind 1M/1W + 1 Team"
+    "description": "CrossFit Semifinal — Ind 1M/1W + 1 Team",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "Magic City Games",
@@ -198,10 +246,13 @@
     "location": "Birmingham, AL",
     "country": "USA",
     "level": "elite",
+    "event_type": "crossfit_semifinal",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://magiccity.games/",
-    "description": "CrossFit Semifinal — Masters only"
+    "description": "CrossFit Semifinal — Masters only",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "WFP Tour Stop 1 — London Pro",
@@ -210,10 +261,13 @@
     "location": "Drumsheds, London",
     "country": "UK",
     "level": "elite",
+    "event_type": "wfp_tour",
     "youtube_url": "https://www.youtube.com/@WorldFitnessProject",
     "ticket_url": "https://www.worldfitnessproject.com/tour/tickets",
     "info_url": "https://worldfitnessproject.com/tour/tour-stop-1",
-    "description": "Pro Men/Women (50 athletes) + Elite Teams (20) + Project 1"
+    "description": "Pro Men/Women (50 athletes) + Elite Teams (20) + Project 1",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "Age-Group Online Semifinal",
@@ -222,10 +276,13 @@
     "location": "Virtual",
     "country": "Worldwide",
     "level": "elite",
+    "event_type": "crossfit_semifinal",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": null,
-    "description": "CrossFit Semifinal — Masters + Teenagers (online)"
+    "description": "CrossFit Semifinal — Masters + Teenagers (online)",
+    "is_all_day": true,
+    "video_feeds": null
   },
   {
     "name": "HYROX Helsinki",
@@ -234,10 +291,13 @@
     "location": "Messukeskus, Helsinki",
     "country": "Finland",
     "level": "elite",
+    "event_type": "hyrox",
     "youtube_url": "https://www.youtube.com/@HYROX",
     "ticket_url": null,
     "info_url": "https://hyrox.com/event/hyrox-helsinki/",
-    "description": "HYROX makes its Finland debut — 8km run + 8 functional stations"
+    "description": "HYROX makes its Finland debut — 8km run + 8 functional stations",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "French Throwdown",
@@ -246,10 +306,13 @@
     "location": "Paris",
     "country": "France",
     "level": "elite",
+    "event_type": "crossfit_semifinal",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://games.crossfit.com/article/frenchthrowdown.com",
-    "description": "CrossFit Semifinal — Ind 3M/3W + 3 Teams + Masters"
+    "description": "CrossFit Semifinal — Ind 3M/3W + 3 Teams + Masters",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "Rebel Renegade Games",
@@ -258,10 +321,13 @@
     "location": "Johannesburg",
     "country": "South Africa",
     "level": "elite",
+    "event_type": "crossfit_semifinal",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://rebelrenegadegames.com/",
-    "description": "CrossFit Semifinal — Ind 1M/1W + 1 Team"
+    "description": "CrossFit Semifinal — Ind 1M/1W + 1 Team",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "Torian Pro",
@@ -270,10 +336,13 @@
     "location": "Brisbane, QLD",
     "country": "Australia",
     "level": "elite",
+    "event_type": "crossfit_semifinal",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://www.torianpro.com/",
-    "description": "CrossFit Semifinal — Ind 3M/3W + 3 Teams + Masters"
+    "description": "CrossFit Semifinal — Ind 3M/3W + 3 Teams + Masters",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "Syndicate Crown",
@@ -282,10 +351,13 @@
     "location": "Knoxville, TN",
     "country": "USA",
     "level": "elite",
+    "event_type": "crossfit_semifinal",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://www.syndicatecrown.com/",
-    "description": "CrossFit Semifinal — Ind 3M/3W + 3 Teams"
+    "description": "CrossFit Semifinal — Ind 3M/3W + 3 Teams",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "MAD Fitness Festival",
@@ -294,10 +366,13 @@
     "location": "Ciudad Real",
     "country": "Spain",
     "level": "elite",
+    "event_type": "crossfit_semifinal",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://madfitnessfestival.com/en/home/",
-    "description": "CrossFit Semifinal — Ind 3M/3W + 1 Team"
+    "description": "CrossFit Semifinal — Ind 3M/3W + 1 Team",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "Northern California Classic",
@@ -306,10 +381,13 @@
     "location": "Sacramento, CA",
     "country": "USA",
     "level": "elite",
+    "event_type": "crossfit_semifinal",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://thenorcalclassic.com/",
-    "description": "CrossFit Semifinal — Ind 2M/2W"
+    "description": "CrossFit Semifinal — Ind 2M/2W",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "HYROX European Championships",
@@ -318,10 +396,13 @@
     "location": "Vienna",
     "country": "Austria",
     "level": "elite",
+    "event_type": "hyrox",
     "youtube_url": "https://www.youtube.com/@HYROX",
     "ticket_url": null,
     "info_url": null,
-    "description": "HYROX European Championships — elite qualification"
+    "description": "HYROX European Championships — elite qualification",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "Team Online Semifinals",
@@ -330,10 +411,13 @@
     "location": "Virtual",
     "country": "Worldwide",
     "level": "elite",
+    "event_type": "crossfit_semifinal",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": null,
-    "description": "CrossFit Semifinal — 7 Teams (online)"
+    "description": "CrossFit Semifinal — 7 Teams (online)",
+    "is_all_day": true,
+    "video_feeds": null
   },
   {
     "name": "Individual Online Semifinals",
@@ -342,10 +426,13 @@
     "location": "Virtual",
     "country": "Worldwide",
     "level": "elite",
+    "event_type": "crossfit_semifinal",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": null,
-    "description": "CrossFit Semifinal — Ind 7M/7W (online)"
+    "description": "CrossFit Semifinal — Ind 7M/7W (online)",
+    "is_all_day": true,
+    "video_feeds": null
   },
   {
     "name": "Turku Tuomiopäivä",
@@ -354,10 +441,13 @@
     "location": "Turku",
     "country": "Finland",
     "level": "elite",
+    "event_type": "finnish",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://reppi.fi/events",
-    "description": "Suomen suurin crossfit-kisa — elite + hobby divisions"
+    "description": "Suomen suurin crossfit-kisa — elite + hobby divisions",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "LatAM Masters",
@@ -366,10 +456,13 @@
     "location": "Colombia",
     "country": "Colombia",
     "level": "elite",
+    "event_type": "crossfit_semifinal",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://www.latammasters.com/",
-    "description": "CrossFit Semifinal — Masters only"
+    "description": "CrossFit Semifinal — Masters only",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "HYROX World Championships",
@@ -378,10 +471,13 @@
     "location": "Chicago, IL",
     "country": "USA",
     "level": "elite",
+    "event_type": "hyrox",
     "youtube_url": "https://www.youtube.com/@HYROX",
     "ticket_url": null,
     "info_url": null,
-    "description": "HYROX World Championships 2026"
+    "description": "HYROX World Championships 2026",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "WFP Tour Stop 2 Qualifier",
@@ -390,10 +486,13 @@
     "location": "Online",
     "country": "Worldwide",
     "level": "elite",
+    "event_type": "wfp_tour",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://worldfitnessproject.com/tour/tour-overview",
-    "description": "Online qualifier for Grand Park Pro"
+    "description": "Online qualifier for Grand Park Pro",
+    "is_all_day": true,
+    "video_feeds": null
   },
   {
     "name": "Yyteri Sandstorm",
@@ -402,10 +501,13 @@
     "location": "Yyteri, Pori",
     "country": "Finland",
     "level": "elite",
+    "event_type": "finnish",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://reppi.fi/events",
-    "description": "Finaalitapahtuma Yyterissä — elite + hobby"
+    "description": "Finaalitapahtuma Yyterissä — elite + hobby",
+    "is_all_day": true,
+    "video_feeds": null
   },
   {
     "name": "Unbroken Karsinnat",
@@ -414,10 +516,13 @@
     "location": "Online",
     "country": "Finland",
     "level": "hobby",
+    "event_type": "finnish",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://reppi.fi/events",
-    "description": "Unbroken-kisojen online-karsinnat"
+    "description": "Unbroken-kisojen online-karsinnat",
+    "is_all_day": true,
+    "video_feeds": null
   },
   {
     "name": "Masters CrossFit Games 2026",
@@ -426,10 +531,13 @@
     "location": "San Jose, CA",
     "country": "USA",
     "level": "elite",
+    "event_type": "crossfit_games",
     "youtube_url": "https://www.youtube.com/@CrossFitGamesTV",
     "ticket_url": null,
     "info_url": null,
-    "description": "Masters CrossFit Games"
+    "description": "Masters CrossFit Games",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "CrossFit Games 2026",
@@ -438,10 +546,13 @@
     "location": "SAP Center, San Jose, CA",
     "country": "USA",
     "level": "elite",
+    "event_type": "crossfit_games",
     "youtube_url": "https://www.youtube.com/@CrossFitGamesTV",
     "ticket_url": null,
     "info_url": "https://games.crossfit.com/season/2026",
-    "description": "The ultimate test of fitness — 20th anniversary Games"
+    "description": "The ultimate test of fitness — 20th anniversary Games",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "Monster Games (WFP Partner)",
@@ -450,10 +561,13 @@
     "location": "Overland Park, KS",
     "country": "USA",
     "level": "elite",
+    "event_type": "wfp_partner",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": null,
-    "description": "WFP partner — Masters 35-55+ Finals invite"
+    "description": "WFP partner — Masters 35-55+ Finals invite",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "WFP Tour Stop 2 — Grand Park Pro",
@@ -462,10 +576,13 @@
     "location": "Grand Park, Westfield, IN",
     "country": "USA",
     "level": "elite",
+    "event_type": "wfp_tour",
     "youtube_url": "https://www.youtube.com/@WorldFitnessProject",
     "ticket_url": null,
     "info_url": "https://worldfitnessproject.com/tour/tour-overview",
-    "description": "Pro Men/Women (50) + Elite Teams (20) + Project 1"
+    "description": "Pro Men/Women (50) + Elite Teams (20) + Project 1",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "WFP Finals Qualifier",
@@ -474,10 +591,13 @@
     "location": "Online",
     "country": "Worldwide",
     "level": "elite",
+    "event_type": "wfp_tour",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://worldfitnessproject.com/tour/tour-overview",
-    "description": "Online qualifier for World Fitness Finals"
+    "description": "Online qualifier for World Fitness Finals",
+    "is_all_day": true,
+    "video_feeds": null
   },
   {
     "name": "Unbroken Finaalit",
@@ -486,10 +606,13 @@
     "location": "Vantaa",
     "country": "Finland",
     "level": "elite",
+    "event_type": "finnish",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://reppi.fi/events",
-    "description": "Unbroken-kisojen finaalit Vantaalla"
+    "description": "Unbroken-kisojen finaalit Vantaalla",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "Heart of America (WFP Partner)",
@@ -498,10 +621,13 @@
     "location": "Springfield, MO",
     "country": "USA",
     "level": "elite",
+    "event_type": "wfp_partner",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": null,
-    "description": "WFP partner — Elite Teams Finals invite"
+    "description": "WFP partner — Elite Teams Finals invite",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "Oslo Throwdown (WFP Partner)",
@@ -510,10 +636,13 @@
     "location": "Oslo",
     "country": "Norway",
     "level": "elite",
+    "event_type": "wfp_partner",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": null,
-    "description": "WFP partner event"
+    "description": "WFP partner event",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "HYROX Hamburg",
@@ -522,10 +651,13 @@
     "location": "Hamburg",
     "country": "Germany",
     "level": "elite",
+    "event_type": "hyrox",
     "youtube_url": "https://www.youtube.com/@HYROX",
     "ticket_url": null,
     "info_url": null,
-    "description": ""
+    "description": "",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "Rogue Invitational",
@@ -534,10 +666,13 @@
     "location": "Aberdeen, Scotland",
     "country": "UK",
     "level": "elite",
+    "event_type": "independent_elite",
     "youtube_url": "https://www.youtube.com/@RogueFitness",
     "ticket_url": null,
     "info_url": "https://roguefitness.com/invitational",
-    "description": "World's strongest CrossFit + Strongman invitational"
+    "description": "World's strongest CrossFit + Strongman invitational",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "iF3 Masters World Championships",
@@ -546,10 +681,13 @@
     "location": "TBD",
     "country": "TBD",
     "level": "elite",
+    "event_type": "independent_elite",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://if3.com",
-    "description": "iF3 Masters World Championships"
+    "description": "iF3 Masters World Championships",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "HYROX Oslo",
@@ -558,10 +696,13 @@
     "location": "Oslo",
     "country": "Norway",
     "level": "elite",
+    "event_type": "hyrox",
     "youtube_url": "https://www.youtube.com/@HYROX",
     "ticket_url": null,
     "info_url": null,
-    "description": ""
+    "description": "",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "WFP World Fitness Finals",
@@ -570,10 +711,13 @@
     "location": "Bella Center, Copenhagen",
     "country": "Denmark",
     "level": "elite",
+    "event_type": "wfp_tour",
     "youtube_url": "https://www.youtube.com/@WorldFitnessProject",
     "ticket_url": null,
     "info_url": "https://www.worldfitnessproject.com/world-fitness-finals",
-    "description": "Season finale — Pro, Teams, Age Groups + Project 1"
+    "description": "Season finale — Pro, Teams, Age Groups + Project 1",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "Vaasa Showdown",
@@ -582,10 +726,13 @@
     "location": "Vaasa",
     "country": "Finland",
     "level": "hobby",
+    "event_type": "finnish",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://reppi.fi/events",
-    "description": "SM-karsintakisa — TBA"
+    "description": "SM-karsintakisa — TBA",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "Finnish CrossFit Championship",
@@ -594,10 +741,13 @@
     "location": "Helsinki",
     "country": "Finland",
     "level": "elite",
+    "event_type": "finnish",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://reppi.fi/events",
-    "description": "Suomen mestaruuskisat — TBA"
+    "description": "Suomen mestaruuskisat — TBA",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "Wodapalooza SoCal",
@@ -606,10 +756,13 @@
     "location": "Southern California",
     "country": "USA",
     "level": "elite",
+    "event_type": "independent_elite",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://wodapalooza.com",
-    "description": "September 2026 — dates TBA"
+    "description": "September 2026 — dates TBA",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "CRASH Crucible",
@@ -618,10 +771,13 @@
     "location": "TBD",
     "country": "USA",
     "level": "elite",
+    "event_type": "independent_elite",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://crashcrucible.com",
-    "description": "CRASH Crucible — October 2026, dates TBA"
+    "description": "CRASH Crucible — October 2026, dates TBA",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "iF3 World Championships",
@@ -630,10 +786,13 @@
     "location": "TBD",
     "country": "TBD",
     "level": "elite",
+    "event_type": "independent_elite",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://if3.com",
-    "description": "iF3 World Championships — Nov/Dec 2026, TBA"
+    "description": "iF3 World Championships — Nov/Dec 2026, TBA",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "Turf Games",
@@ -642,10 +801,13 @@
     "location": "London",
     "country": "UK",
     "level": "elite",
+    "event_type": "independent_elite",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://turfgames.com",
-    "description": "UK functional fitness — multiple dates TBA"
+    "description": "UK functional fitness — multiple dates TBA",
+    "is_all_day": false,
+    "video_feeds": null
   },
   {
     "name": "ATHX Games",
@@ -654,9 +816,12 @@
     "location": "UK",
     "country": "UK",
     "level": "elite",
+    "event_type": "independent_elite",
     "youtube_url": null,
     "ticket_url": null,
     "info_url": "https://athxgames.com",
-    "description": "UK functional fitness competition — dates TBA"
+    "description": "UK functional fitness competition — dates TBA",
+    "is_all_day": false,
+    "video_feeds": null
   }
 ]
