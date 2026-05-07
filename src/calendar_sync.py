@@ -339,12 +339,8 @@ class GoogleCalendarSync:
             'summary': event.summary,
             'description': event.description,
             'location': event.location,
-            'reminders': {
-                'useDefault': False,
-                'overrides': [
-                    {'method': 'popup', 'minutes': 60},
-                ],
-            },
+            'transparency': 'transparent',
+            'reminders': {'useDefault': False},
         }
         
         # Add color if specified
@@ -352,11 +348,9 @@ class GoogleCalendarSync:
             event_body['colorId'] = event.color_id
         
         if event.is_all_day:
-            # All-day event: transparent (free), no reminders (season periods are informational)
+            # All-day event (season periods are informational)
             event_body['start'] = {'date': event.start.strftime('%Y-%m-%d')}
             event_body['end'] = {'date': event.end.strftime('%Y-%m-%d')}
-            event_body['transparency'] = 'transparent'
-            event_body['reminders'] = {'useDefault': False}
         else:
             event_body['start'] = {
                 'dateTime': event.start.isoformat(),
@@ -388,12 +382,8 @@ class GoogleCalendarSync:
             'summary': event.summary,
             'description': event.description,
             'location': event.location,
-            'reminders': {
-                'useDefault': False,
-                'overrides': [
-                    {'method': 'popup', 'minutes': 60},
-                ],
-            },
+            'transparency': 'transparent',
+            'reminders': {'useDefault': False},
         }
 
         # Add color if specified
@@ -403,8 +393,6 @@ class GoogleCalendarSync:
         if event.is_all_day:
             event_body['start'] = {'date': event.start.strftime('%Y-%m-%d')}
             event_body['end'] = {'date': event.end.strftime('%Y-%m-%d')}
-            event_body['transparency'] = 'transparent'
-            event_body['reminders'] = {'useDefault': False}
         else:
             event_body['start'] = {
                 'dateTime': event.start.isoformat(),
