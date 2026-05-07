@@ -311,7 +311,10 @@ class GoogleCalendarSync:
             description_parts.append("\n(Viitteellinen ajanjakso — ei yksittäinen kisatapahtuma)")
         
         # Calculate end date
+        # If end == start (single-day event), extend to next day for a 1-day span
         end_date = competition.date_end or (competition.date_start + timedelta(days=1))
+        if end_date == competition.date_start:
+            end_date = competition.date_start + timedelta(days=1)
         
         category_label = CATEGORY_LABELS.get(competition.category, "")
         prefix = f"[{category_label}] " if category_label else ""
@@ -349,12 +352,11 @@ class GoogleCalendarSync:
             event_body['colorId'] = event.color_id
         
         if event.is_all_day:
-            # All-day event: no reminders (season periods are just informational)
+            # All-day event: transparent (free), no reminders (season periods are informational)
             event_body['start'] = {'date': event.start.strftime('%Y-%m-%d')}
             event_body['end'] = {'date': event.end.strftime('%Y-%m-%d')}
-            event_body['reminders'] = {'useDefault': False, 'overrides': [
-                {'method': 'popup', 'minutes': 0}
-            ]}
+            event_body['transparency'] = 'transparent'
+            event_body['reminders'] = {'useDefault': False}
         else:
             event_body['start'] = {
                 'dateTime': event.start.isoformat(),
@@ -401,9 +403,8 @@ class GoogleCalendarSync:
         if event.is_all_day:
             event_body['start'] = {'date': event.start.strftime('%Y-%m-%d')}
             event_body['end'] = {'date': event.end.strftime('%Y-%m-%d')}
-            event_body['reminders'] = {'useDefault': False, 'overrides': [
-                {'method': 'popup', 'minutes': 0}
-            ]}
+            event_body['transparency'] = 'transparent'
+            event_body['reminders'] = {'useDefault': False}
         else:
             event_body['start'] = {
                 'dateTime': event.start.isoformat(),
