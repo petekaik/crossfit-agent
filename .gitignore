@@ -17,6 +17,11 @@ __pycache__/
 .vscode/
 .idea/
 
+# Runtime state and logs
+data/state.json
+data/cron_state.json
+data/logs/
+
 # OS
 .DS_Store
 Thumbs.db
