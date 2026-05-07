@@ -56,6 +56,8 @@ def save_competitions(competitions: list, filepath: Path = COMPETITIONS_FILE):
             "description": comp.description,
             "is_all_day": comp.is_all_day,
             "video_feeds": comp.video_feeds if comp.video_feeds else None,
+            "category": comp.category,
+            "color_id": comp.color_id,
         })
     
     with open(filepath, 'w', encoding='utf-8') as f:
@@ -158,6 +160,8 @@ def run_sync(dry_run: bool = False, console_auth: bool = False):
             description=item.get('description', ''),
             is_all_day=item.get('is_all_day', False),
             video_feeds=item.get('video_feeds'),
+            category=item.get('category', ''),
+            color_id=item.get('color_id', ''),
         )
         competitions.append(comp)
     

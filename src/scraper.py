@@ -44,6 +44,79 @@ class EventType(Enum):
     HYROX = "hyrox"
     INDEPENDENT_ELITE = "independent_elite"
     FINNISH = "finnish"
+    ATHX = "athx"
+    DEKA_FIT = "deka_fit"
+    METRIX = "metrix"
+    GYM_CLASH = "gym_clash"
+    OCR = "ocr"
+    OCR_TOUGH_VIKING = "ocr_tough_viking"
+    STRONGMAN = "strongman"
+    WEIGHTLIFTING = "weightlifting"
+    POWERLIFTING = "powerlifting"
+    ADVENTURE_RACE = "adventure_race"
+
+# ──────────────────────────────────────────────
+# Category → calendar color mapping (Google Calendar colorId)
+# ──────────────────────────────────────────────
+
+CATEGORY_COLORS = {
+    "crossfit":   "11",  # Bold Red
+    "wfp":        "4",   # Flamingo (pink)
+    "hyrox":      "5",   # Tangerine (yellow/orange)
+    "athx":       "6",   # Tangerine (orange)
+    "deka":       "2",   # Sage (green)
+    "metrix":     "3",   # Grape (purple)
+    "gym_clash":  "4",   # Flamingo
+    "ocr":        "10",  # Basil (dark green)
+    "strongman":  "11",  # Bold Red
+    "weightlifting": "9", # Blueberry (dark blue)
+    "powerlifting": "1",  # Lavender
+    "adventure":  "7",   # Peacock (teal)
+    "finnish":    "3",   # Grape
+    "other":      "8",   # Graphite (gray)
+}
+
+# Category → short label for event title prefix
+CATEGORY_LABELS = {
+    "crossfit":   "CrossFit",
+    "wfp":        "WFP",
+    "hyrox":      "HYROX",
+    "athx":       "ATHX",
+    "deka":       "DEKA",
+    "metrix":     "METRIX",
+    "gym_clash":  "Gym Clash",
+    "ocr":        "OCR",
+    "strongman":  "Strongman",
+    "weightlifting": "Painonnosto",
+    "powerlifting": "Voimanosto",
+    "adventure":  "Seikkailu",
+    "finnish":    "Suomi",
+    "other":      "",
+}
+
+def _category_for_event_type(event_type: EventType) -> str:
+    """Map EventType to category key."""
+    mapping = {
+        EventType.CROSSFIT_GAMES: "crossfit",
+        EventType.CROSSFIT_SEMIFINAL: "crossfit",
+        EventType.WFP_TOUR: "wfp",
+        EventType.WFP_PARTNER: "wfp",
+        EventType.HYROX: "hyrox",
+        EventType.ATHX: "athx",
+        EventType.DEKA_FIT: "deka",
+        EventType.METRIX: "metrix",
+        EventType.GYM_CLASH: "gym_clash",
+        EventType.OCR: "ocr",
+        EventType.OCR_TOUGH_VIKING: "ocr",
+        EventType.STRONGMAN: "strongman",
+        EventType.WEIGHTLIFTING: "weightlifting",
+        EventType.POWERLIFTING: "powerlifting",
+        EventType.ADVENTURE_RACE: "adventure",
+        EventType.FINNISH: "finnish",
+        EventType.INDEPENDENT_ELITE: "other",
+    }
+    return mapping.get(event_type, "other")
+
 
 @dataclass
 class Competition:
@@ -60,6 +133,14 @@ class Competition:
     description: str = ""
     is_all_day: bool = False           # True = season period, all-day calendar event
     video_feeds: List[Dict[str, str]] = field(default_factory=list)  # e.g. [{"label": "Morning", "url": "..."}]
+    category: str = ""                 # Category key for color/title prefix
+    color_id: str = ""                 # Google Calendar colorId
+
+    def __post_init__(self):
+        if not self.category:
+            self.category = _category_for_event_type(self.event_type)
+        if not self.color_id:
+            self.color_id = CATEGORY_COLORS.get(self.category, "8")
 
 
 # ──────────────────────────────────────────────
@@ -73,7 +154,8 @@ def _d(date_str: Optional[str]) -> Optional[datetime]:
     return datetime.strptime(date_str, "%Y-%m-%d")
 
 def _c(name, start, end, location, country, level, event_type=EventType.INDEPENDENT_ELITE,
-       youtube=None, ticket=None, info=None, description="", is_all_day=False, video_feeds=None):
+       youtube=None, ticket=None, info=None, description="", is_all_day=False, video_feeds=None,
+       category=None, color_id=None):
     """Factory for Competition with optional end date."""
     return Competition(
         name=name,
@@ -89,6 +171,8 @@ def _c(name, start, end, location, country, level, event_type=EventType.INDEPEND
         description=description,
         is_all_day=is_all_day,
         video_feeds=video_feeds or [],
+        category=category or "",
+        color_id=color_id or "",
     )
 
 
@@ -558,8 +642,376 @@ class EliteEventScraper:
         return comps
 
 
+
+
 # ──────────────────────────────────────────────
-# 6. Generic Web Scraper (for dynamic research)
+# 6. ATHX Games Scraper
+# ──────────────────────────────────────────────
+
+class ATHXScraper:
+    """ATHX Games 2026 — 11-event functional fitness tour across Europe.
+
+    Source: athxgames.com/events
+    """
+
+    ATHX_YOUTUBE = "https://www.youtube.com/@ATHXGames"
+
+    ATHX_EVENTS = [
+        ("ATHX Berlin 2026",       "2026-05-16", "2026-05-16", "Arena Halle Berlin",       "Germany",
+         "https://athxgames.com/events/01k8b743fr5gaejbckwabswn8d"),
+        ("ATHX Dublin 2026",       "2026-05-30", "2026-05-30", "RDS Dublin",               "Ireland",
+         "https://athxgames.com/events/01k8b7jd8b2etcvybdqprk9jw1"),
+        ("ATHX Glasgow 2026",      "2026-06-20", "2026-06-21", "SEC",                      "UK",
+         "https://athxgames.com/events/01k8b7k56e7bca5p1ybdfhgat9"),
+        ("ATHX Copenhagen 2026",   "2026-08-15", "2026-08-15", "Bella Centre",             "Denmark",
+         "https://athxgames.com/events/01k8b7kghhb3nk1h7gvshdxsjw"),
+        ("ATHX Birmingham 2026",   "2026-08-22", "2026-08-23", "NEC Birmingham",           "UK",
+         "https://athxgames.com/events/01k8b7ktbk6j2am0j31tdf0v72"),
+        ("ATHX Barcelona 2026",    "2026-09-05", "2026-09-05", "Fira Barcelona",           "Spain",
+         "https://athxgames.com/events/01k8b7mbq0ck7hj91405k8k4nf"),
+        ("ATHX Marseille 2026",    "2026-09-19", "2026-09-19", "Marseille Chanot",         "France",
+         "https://athxgames.com/events/01k8b7mm46ynsfm2ygsjvr0wz4"),
+        ("ATHX Liverpool 2026",    "2026-10-03", "2026-10-04", "Exhibition Centre L'pool", "UK",
+         "https://athxgames.com/events/01k8b7nfsdk5cbdrxf2h0hgy9v"),
+        ("ATHX Amsterdam 2026",    "2026-11-07", "2026-11-07", "RAI Amsterdam",            "Netherlands",
+         "https://athxgames.com/events/01k8b7nxgwcr70a86vqf2y6ck4"),
+        ("ATHX Finals Lisbon 2026","2026-11-27", "2026-11-29", "Lisbon Congress Centre",   "Portugal",
+         "https://athxgames.com/events/01kk1b7p4a1pzebw5dd7q2z7wn"),
+    ]
+
+    def fetch_competitions(self) -> List[Competition]:
+        comps = []
+        for name, start, end, loc, country, info in self.ATHX_EVENTS:
+            comps.append(_c(
+                name, start, end, loc, country, CompetitionLevel.ELITE,
+                EventType.ATHX,
+                youtube=self.ATHX_YOUTUBE, info=info,
+                description="ATHX: 2.5h continuous fitness competition — 6 zones",
+            ))
+        return comps
+
+
+# ──────────────────────────────────────────────
+# 7. Adventure Race / ARWS Scraper
+# ──────────────────────────────────────────────
+
+class AdventureRaceScraper:
+    """Adventure Racing World Series + Arctic extreme events.
+
+    Sources: arworldseries.com, adventurerace.fi, arcticescapades.com
+    """
+
+    def fetch_competitions(self) -> List[Competition]:
+        comps = []
+
+        # ARWS European Series — Endurance Quest Lohja 26.-28.6.2026
+        comps.append(_c(
+            "Endurance Quest Lohja (ARWS)", "2026-06-26", "2026-06-28",
+            "Lohja", "Finland", CompetitionLevel.ELITE,
+            EventType.ADVENTURE_RACE,
+            info="https://www.arworldseries.com/",
+            description="Adventure Racing World Series — European Series. Huipputason seikkailu-urheilu Suomessa! Suunnistus, pyöräily, melonta, köysilajit.",
+        ))
+
+        # Adventure Race Rovaniemi
+        comps.append(_c(
+            "Adventure Race Rovaniemi", "2026-05-23", "2026-05-23",
+            "Rovaniemi", "Finland", CompetitionLevel.HOBBY,
+            EventType.ADVENTURE_RACE,
+            info="https://adventurerace.fi/",
+            description="Ounasvaaran maastossa — työyhteisöjen seikkailukisa.",
+        ))
+
+        # Arctic Circle Race (past)
+        comps.append(_c(
+            "Arctic Circle Race", "2026-03-27", "2026-03-29",
+            "Sisimiut", "Greenland", CompetitionLevel.ELITE,
+            EventType.ADVENTURE_RACE,
+            info="https://visitgreenland.com/events/arctic-circle-race/",
+            description="160 km seikkailujuoksu arktisissa olosuhteissa. Past event.",
+        ))
+
+        return comps
+
+
+# ──────────────────────────────────────────────
+# 8. OCR Scrapers (Tough Viking, Strong Viking, Tough Mudder, Spartan, Red Bull 400)
+# ──────────────────────────────────────────────
+
+class OCRScraper:
+    """Obstacle Course Racing — multiple major series.
+
+    Sources: toughviking.se, strongviking.com, toughmudder.com, spartan.com, redbull.com
+    """
+
+    def fetch_competitions(self) -> List[Competition]:
+        comps = []
+
+        # Tough Viking — Nordic OCR, Helsinki-tapahtuma
+        comps.append(_c(
+            "Tough Viking Helsinki", "2026-08-22", "2026-08-22",
+            "Helsinki", "Finland", CompetitionLevel.ELITE,
+            EventType.OCR_TOUGH_VIKING,
+            info="https://toughviking.se/tough-viking-helsinki/",
+            description="Pohjoismaiden suurin OCR. Suomen ainoa Tough Viking -tapahtuma. 8-15 km, estettä.",
+        ))
+
+        comps.append(_c(
+            "Tough Viking Slottsskogen", "2026-04-25", "2026-04-25",
+            "Göteborg", "Sweden", CompetitionLevel.ELITE,
+            EventType.OCR,
+            info="https://toughviking.se/",
+            description="Tough Viking Göteborg — Slottsskogen.",
+        ))
+
+        comps.append(_c(
+            "Tough Viking Djurgården 5K", "2026-08-22", "2026-08-22",
+            "Tukholma", "Sweden", CompetitionLevel.ELITE,
+            EventType.OCR,
+            info="https://toughviking.se/kungliga-djurgarden-22-augusti/",
+            description="Tough Viking Kungl. Djurgården 5K.",
+        ))
+
+        # Strong Viking — Benelux + Germany
+        comps.append(_c(
+            "Strong Viking Hofstade", "2026-05-30", "2026-05-30",
+            "Hofstade", "Belgium", CompetitionLevel.ELITE,
+            EventType.OCR,
+            info="https://strongviking.com/en/events/",
+            description="Strong Viking — 4-42 km obstaclerun Belgiassa.",
+        ))
+
+        comps.append(_c(
+            "Strong Viking Wijchen", "2026-06-12", "2026-06-14",
+            "Wijchen", "Netherlands", CompetitionLevel.ELITE,
+            EventType.OCR,
+            info="https://strongviking.com/en/events/",
+            description="Strong Viking Wijchen — 3 päivän OCR-festivaali.",
+        ))
+
+        comps.append(_c(
+            "Strong Viking Ultra Frankfurt", "2026-07-04", "2026-07-05",
+            "Frankfurt", "Germany", CompetitionLevel.ELITE,
+            EventType.OCR,
+            info="https://strongviking.com/en/events/",
+            description="Strong Viking Frankfurt + Ultra Viking (60 km, 135+ estettä).",
+        ))
+
+        # Tough Mudder Europe
+        comps.append(_c(
+            "Tough Mudder Berlin-Brandenburg", "2026-06-13", "2026-06-14",
+            "Spargelhof Klaistow", "Germany", CompetitionLevel.ELITE,
+            EventType.OCR,
+            info="https://toughmudder.de/en/events/berlin-brandenburg-en/",
+            description="Tough Mudder Berlin — klassikko-OCR Saksassa.",
+        ))
+
+        comps.append(_c(
+            "World's Toughest Mudder 2026", None, None,
+            "TBD", "USA", CompetitionLevel.ELITE,
+            EventType.OCR,
+            info="https://toughmudder.com/tough-mudder-endurance-series/",
+            description="24h endurance OCR — dates TBA.",
+        ))
+
+        # Spartan Race
+        comps.append(_c(
+            "Spartan World Championship 2026", "2026-10-30", "2026-11-01",
+            "Abu Dhabi", "UAE", CompetitionLevel.ELITE,
+            EventType.OCR,
+            info="https://www.spartan.com/",
+            description="Spartan World Championship — Sprint, Super, Beast.",
+        ))
+
+        # Red Bull 400
+        comps.append(_c(
+            "Red Bull 400 Courchevel", "2026-07-10", "2026-07-10",
+            "Courchevel", "France", CompetitionLevel.ELITE,
+            EventType.OCR,
+            info="https://www.redbull.com/us-en/events",
+            description="Maailman jyrkin 400m porrasjuoksu hyppyrimäessä.",
+        ))
+
+        comps.append(_c(
+            "Red Bull 400 Ironwood", "2026-05-09", "2026-05-09",
+            "Ironwood, MI", "USA", CompetitionLevel.ELITE,
+            EventType.OCR,
+            info="https://www.redbull.com/us-en/event-series/rb-400-usa",
+            description="Red Bull 400 Copper Peak.",
+        ))
+
+        return comps
+
+
+# ──────────────────────────────────────────────
+# 9. DEKA FIT Scraper (Spartan functional fitness)
+# ──────────────────────────────────────────────
+
+class DEKAScraper:
+    """DEKA FIT 2026 — Spartan's functional fitness event series.
+
+    Source: spartan.com, obstacleracingmedia.com
+    """
+
+    DEKA_EVENTS = [
+        ("DEKA FIT SoCal (Anaheim)",    "2026-03-21", "2026-03-22", "Anaheim, CA",             "USA"),
+        ("DEKA FIT NorCal (Sacramento)","2026-04-25", "2026-04-26", "Sacramento, CA",          "USA"),
+        ("DEKA FIT Austin",            "2026-05-09", "2026-05-10", "Austin, TX",               "USA"),
+        ("DEKA FIT Denver",            "2026-05-30", "2026-05-30", "Aurora, CO",               "USA"),
+        ("DEKA FIT Boston",            "2026-06-26", "2026-06-28", "Boston, MA",               "USA"),
+        ("DEKA FIT Chicago",           "2026-07-10", "2026-07-12", "Chicago, IL",              "USA"),
+        ("DEKA FIT Philadelphia",      "2026-08-07", "2026-08-09", "Philadelphia, PA",         "USA"),
+        ("DEKA FIT Raleigh",           "2026-08-22", "2026-08-23", "Raleigh, NC",              "USA"),
+        ("DEKA FIT Ft. Lauderdale",    "2026-09-11", "2026-09-13", "Ft. Lauderdale, FL",       "USA"),
+        ("DEKA FIT New York",          "2026-09-25", "2026-09-27", "New York, NY",             "USA"),
+        ("DEKA FIT Washington DC",     "2026-11-20", "2026-11-22", "Washington, DC",           "USA"),
+    ]
+
+    def fetch_competitions(self) -> List[Competition]:
+        comps = []
+        for name, start, end, loc, country in self.DEKA_EVENTS:
+            comps.append(_c(
+                name, start, end, loc, country, CompetitionLevel.ELITE,
+                EventType.DEKA_FIT,
+                info="https://www.spartan.com/en/race/find-a-race?race-type=deka",
+                description="DEKA FIT: 10 functional training zones × 500m run = 5K total. Spartanin nopeimmin kasvava sarja.",
+            ))
+        return comps
+
+
+# ──────────────────────────────────────────────
+# 10. Red Bull Gym Clash Scraper
+# ──────────────────────────────────────────────
+
+class GymClashScraper:
+    """Red Bull Gym Clash — team functional fitness competition.
+
+    Source: redbull.com/event-series/red-bull-gym-clash
+    """
+
+    def fetch_competitions(self) -> List[Competition]:
+        comps = []
+
+        comps.append(_c(
+            "Red Bull Gym Clash World Final 2026", None, None,
+            "TBD", "TBD", CompetitionLevel.ELITE,
+            EventType.GYM_CLASH,
+            info="https://www.redbull.com/us-en/event-series/red-bull-gym-clash",
+            description="Red Bull Gym Clash — 4 hengen tiimit (2M+2N), 4 functional fitness -haastetta. Kansalliset finaalit → maailmanfinaali. Dates TBA.",
+        ))
+
+        return comps
+
+
+# ──────────────────────────────────────────────
+# 11. METRIX Fitness Racing Scraper
+# ──────────────────────────────────────────────
+
+class METRIXScraper:
+    """METRIX Fitness Racing — UK-pohjainen sarja.
+
+    Source: metrix.fitness
+    """
+
+    def fetch_competitions(self) -> List[Competition]:
+        comps = []
+
+        comps.append(_c(
+            "METRIX London 2026", "2026-02-20", "2026-02-21",
+            "Magazine London", "UK", CompetitionLevel.ELITE,
+            EventType.METRIX,
+            info="https://metrix.fitness/",
+            description="METRIX: all-day fitness racing experience. UK:n nopeimmin kasvava sarja. Past event.",
+        ))
+
+        comps.append(_c(
+            "METRIX Cambridge SIM", "2026-01-17", "2026-01-17",
+            "Cambridge", "UK", CompetitionLevel.ELITE,
+            EventType.METRIX,
+            info="https://metrix.fitness/",
+            description="METRIX SIM — gym-tason tapahtuma. Past event.",
+        ))
+
+        return comps
+
+
+# ──────────────────────────────────────────────
+# 12. Strength Sports Scraper (Strongman + Weightlifting + Powerlifting)
+# ──────────────────────────────────────────────
+
+class StrengthSportsScraper:
+    """Strongman, Olympic Weightlifting, Powerlifting — major 2026 events.
+
+    Sources: theworldsstrongestman.com, arnoldsports.com, giants-live.com,
+             ewf.sport, powerlifting.sport
+    """
+
+    def fetch_competitions(self) -> List[Competition]:
+        comps = []
+
+        # ── Strongman ──
+        comps.append(_c(
+            "Arnold Strongman Classic 2026", "2026-03-06", "2026-03-07",
+            "Columbus, OH", "USA", CompetitionLevel.ELITE,
+            EventType.STRONGMAN,
+            info="https://www.roguefitness.com/arnold-strongman-classic",
+            description="Arnold Sports Festival — Strongman Classic + Strongwoman. Past event.",
+        ))
+
+        comps.append(_c(
+            "Europe's Strongest Man 2026", "2026-04-11", "2026-04-11",
+            "Leeds, First Direct Arena", "UK", CompetitionLevel.ELITE,
+            EventType.STRONGMAN,
+            info="https://giants-live.com/shows/europes-strongest-man-2026/",
+            description="Europe's Strongest Man — Giants Live -kiertue. Past event.",
+        ))
+
+        comps.append(_c(
+            "World's Strongest Man 2026", "2026-04-23", "2026-04-26",
+            "Myrtle Beach, SC", "USA", CompetitionLevel.ELITE,
+            EventType.STRONGMAN,
+            info="https://www.theworldsstrongestman.com/2026-information/",
+            description="SBD World's Strongest Man — 25 urheilijaa. Past event.",
+        ))
+
+        comps.append(_c(
+            "The Strongman Classic 2026", None, None,
+            "Royal Albert Hall, London", "UK", CompetitionLevel.ELITE,
+            EventType.STRONGMAN,
+            info="https://giants-live.com/",
+            description="Giants Live — The Strongman Classic. Dates TBA.",
+        ))
+
+        # ── Olympic Weightlifting ──
+        comps.append(_c(
+            "European Weightlifting Championships 2026", "2026-04-19", "2026-04-26",
+            "Batumi", "Georgia", CompetitionLevel.ELITE,
+            EventType.WEIGHTLIFTING,
+            info="https://ewf.sport/2026/01/14/2026-ewf-european-championships/",
+            description="Painonnoston EM — 104. edition. Past event.",
+        ))
+
+        # ── Powerlifting ──
+        comps.append(_c(
+            "IPF World Classic Championships 2026", "2026-06-08", "2026-06-14",
+            "Druskininkai", "Lithuania", CompetitionLevel.ELITE,
+            EventType.POWERLIFTING,
+            info="https://www.powerlifting.sport/",
+            description="IPF World Classic Open — siirretty Dubaista Liettuaan.",
+        ))
+
+        comps.append(_c(
+            "WPO Powerlifting Championship Las Vegas", "2026-11-20", "2026-11-22",
+            "Las Vegas, NV", "USA", CompetitionLevel.ELITE,
+            EventType.POWERLIFTING,
+            info="https://www.powerlifting.sport/",
+            description="World Powerlifting Organization — Westgate Resort & Casino.",
+        ))
+
+        return comps
+
+# ──────────────────────────────────────────────
+# 13. Generic Web Scraper (for dynamic research)
 # ──────────────────────────────────────────────
 
 class GenericScraper:
@@ -614,6 +1066,13 @@ class CompetitionAggregator:
         self.hyrox = HYROXScraper()
         self.reppi = ReppiScraper()
         self.elite = EliteEventScraper()
+        self.athx = ATHXScraper()
+        self.adventure = AdventureRaceScraper()
+        self.ocr = OCRScraper()
+        self.deka = DEKAScraper()
+        self.gym_clash = GymClashScraper()
+        self.metrix = METRIXScraper()
+        self.strength = StrengthSportsScraper()
         self.generic = GenericScraper()
         self.competitions: List[Competition] = []
 
@@ -638,6 +1097,27 @@ class CompetitionAggregator:
 
         # Layer 5: Independent elite events
         self.competitions.extend(self.elite.fetch_competitions())
+
+        # Layer 6: ATHX Games (11 events)
+        self.competitions.extend(self.athx.fetch_competitions())
+
+        # Layer 7: Adventure Racing (ARWS, AR, Arctic)
+        self.competitions.extend(self.adventure.fetch_competitions())
+
+        # Layer 8: OCR (Tough Viking, Strong Viking, Tough Mudder, Spartan, Red Bull 400)
+        self.competitions.extend(self.ocr.fetch_competitions())
+
+        # Layer 9: DEKA FIT (Spartan functional fitness)
+        self.competitions.extend(self.deka.fetch_competitions())
+
+        # Layer 10: Red Bull Gym Clash
+        self.competitions.extend(self.gym_clash.fetch_competitions())
+
+        # Layer 11: METRIX Fitness Racing
+        self.competitions.extend(self.metrix.fetch_competitions())
+
+        # Layer 12: Strength Sports (Strongman + Weightlifting + Powerlifting)
+        self.competitions.extend(self.strength.fetch_competitions())
 
         # Deduplicate
         self._deduplicate()
@@ -705,6 +1185,8 @@ class CompetitionAggregator:
                 "description": comp.description,
                 "is_all_day": comp.is_all_day,
                 "video_feeds": comp.video_feeds if comp.video_feeds else None,
+                "category": comp.category,
+                "color_id": comp.color_id,
             })
         return json.dumps(data, indent=2, ensure_ascii=False)
 

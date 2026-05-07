@@ -12,7 +12,26 @@
     "info_url": null,
     "description": "",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "crossfit",
+    "color_id": "11"
+  },
+  {
+    "name": "METRIX Cambridge SIM",
+    "date_start": "2026-01-17T00:00:00",
+    "date_end": "2026-01-17T00:00:00",
+    "location": "Cambridge",
+    "country": "UK",
+    "level": "elite",
+    "event_type": "metrix",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://metrix.fitness/",
+    "description": "METRIX SIM — gym-tason tapahtuma. Past event.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "metrix",
+    "color_id": "3"
   },
   {
     "name": "The Fittest Experience (TFX)",
@@ -27,7 +46,9 @@
     "info_url": "https://thefittestexperience.com",
     "description": "Major early-season elite event. Past event.",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "other",
+    "color_id": "8"
   },
   {
     "name": "WFP Tour Stop 1 Qualifier",
@@ -42,7 +63,26 @@
     "info_url": "https://worldfitnessproject.com/tour/tour-overview",
     "description": "Online qualifier for London Pro",
     "is_all_day": true,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "wfp",
+    "color_id": "4"
+  },
+  {
+    "name": "METRIX London 2026",
+    "date_start": "2026-02-20T00:00:00",
+    "date_end": "2026-02-21T00:00:00",
+    "location": "Magazine London",
+    "country": "UK",
+    "level": "elite",
+    "event_type": "metrix",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://metrix.fitness/",
+    "description": "METRIX: all-day fitness racing experience. UK:n nopeimmin kasvava sarja. Past event.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "metrix",
+    "color_id": "3"
   },
   {
     "name": "CrossFit Open 2026",
@@ -57,7 +97,26 @@
     "info_url": "https://games.crossfit.com/open",
     "description": "CrossFit Open — worldwide online qualifier",
     "is_all_day": true,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "crossfit",
+    "color_id": "11"
+  },
+  {
+    "name": "Arnold Strongman Classic 2026",
+    "date_start": "2026-03-06T00:00:00",
+    "date_end": "2026-03-07T00:00:00",
+    "location": "Columbus, OH",
+    "country": "USA",
+    "level": "elite",
+    "event_type": "strongman",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://www.roguefitness.com/arnold-strongman-classic",
+    "description": "Arnold Sports Festival — Strongman Classic + Strongwoman. Past event.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "strongman",
+    "color_id": "11"
   },
   {
     "name": "Wodapalooza Miami Beach",
@@ -72,7 +131,9 @@
     "info_url": "https://wodapalooza.com",
     "description": "Largest fitness festival — elite + community. Past event.",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "other",
+    "color_id": "8"
   },
   {
     "name": "HYROX Copenhagen",
@@ -87,7 +148,9 @@
     "info_url": null,
     "description": "HYROX Copenhagen",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "hyrox",
+    "color_id": "5"
   },
   {
     "name": "HYROX Berlin",
@@ -102,7 +165,26 @@
     "info_url": null,
     "description": "",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "hyrox",
+    "color_id": "5"
+  },
+  {
+    "name": "DEKA FIT SoCal (Anaheim)",
+    "date_start": "2026-03-21T00:00:00",
+    "date_end": "2026-03-22T00:00:00",
+    "location": "Anaheim, CA",
+    "country": "USA",
+    "level": "elite",
+    "event_type": "deka_fit",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://www.spartan.com/en/race/find-a-race?race-type=deka",
+    "description": "DEKA FIT: 10 functional training zones × 500m run = 5K total. Spartanin nopeimmin kasvava sarja.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "deka",
+    "color_id": "2"
   },
   {
     "name": "CrossFit Quarterfinals 2026",
@@ -117,7 +199,26 @@
     "info_url": null,
     "description": "CrossFit Quarterfinals — top 25% from Open",
     "is_all_day": true,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "crossfit",
+    "color_id": "11"
+  },
+  {
+    "name": "Arctic Circle Race",
+    "date_start": "2026-03-27T00:00:00",
+    "date_end": "2026-03-29T00:00:00",
+    "location": "Sisimiut",
+    "country": "Greenland",
+    "level": "elite",
+    "event_type": "adventure_race",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://visitgreenland.com/events/arctic-circle-race/",
+    "description": "160 km seikkailujuoksu arktisissa olosuhteissa. Past event.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "adventure",
+    "color_id": "7"
   },
   {
     "name": "HYROX Stockholm",
@@ -132,7 +233,9 @@
     "info_url": null,
     "description": "HYROX Stockholm",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "hyrox",
+    "color_id": "5"
   },
   {
     "name": "HYROX London",
@@ -147,7 +250,26 @@
     "info_url": null,
     "description": "",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "hyrox",
+    "color_id": "5"
+  },
+  {
+    "name": "Europe's Strongest Man 2026",
+    "date_start": "2026-04-11T00:00:00",
+    "date_end": "2026-04-11T00:00:00",
+    "location": "Leeds, First Direct Arena",
+    "country": "UK",
+    "level": "elite",
+    "event_type": "strongman",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://giants-live.com/shows/europes-strongest-man-2026/",
+    "description": "Europe's Strongest Man — Giants Live -kiertue. Past event.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "strongman",
+    "color_id": "11"
   },
   {
     "name": "Mayhem Classic",
@@ -162,7 +284,9 @@
     "info_url": "https://mayhemclassic.com",
     "description": "CrossFit Semifinal — 3M/3W Games spots\nAikataulu (EET): 10:00–18:00",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "crossfit",
+    "color_id": "11"
   },
   {
     "name": "Athens Throwdown (WFP Partner)",
@@ -177,7 +301,43 @@
     "info_url": null,
     "description": "WFP partner — 1st place → Finals invite (past event)",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "wfp",
+    "color_id": "4"
+  },
+  {
+    "name": "European Weightlifting Championships 2026",
+    "date_start": "2026-04-19T00:00:00",
+    "date_end": "2026-04-26T00:00:00",
+    "location": "Batumi",
+    "country": "Georgia",
+    "level": "elite",
+    "event_type": "weightlifting",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://ewf.sport/2026/01/14/2026-ewf-european-championships/",
+    "description": "Painonnoston EM — 104. edition. Past event.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "weightlifting",
+    "color_id": "9"
+  },
+  {
+    "name": "World's Strongest Man 2026",
+    "date_start": "2026-04-23T00:00:00",
+    "date_end": "2026-04-26T00:00:00",
+    "location": "Myrtle Beach, SC",
+    "country": "USA",
+    "level": "elite",
+    "event_type": "strongman",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://www.theworldsstrongestman.com/2026-information/",
+    "description": "SBD World's Strongest Man — 25 urheilijaa. Past event.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "strongman",
+    "color_id": "11"
   },
   {
     "name": "Legends Championship",
@@ -192,7 +352,9 @@
     "info_url": "https://legendscomp.com/legends-del-mar/",
     "description": "CrossFit Semifinal — Ind 2M/2W + Masters\nAikataulu (EET): 12:00–20:00",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "crossfit",
+    "color_id": "11"
   },
   {
     "name": "CRASH Crescendo",
@@ -207,7 +369,43 @@
     "info_url": "https://crashcrucible.com",
     "description": "CRASH Crescendo — elite functional fitness + strongman",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "other",
+    "color_id": "8"
+  },
+  {
+    "name": "Tough Viking Slottsskogen",
+    "date_start": "2026-04-25T00:00:00",
+    "date_end": "2026-04-25T00:00:00",
+    "location": "Göteborg",
+    "country": "Sweden",
+    "level": "elite",
+    "event_type": "ocr",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://toughviking.se/",
+    "description": "Tough Viking Göteborg — Slottsskogen.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "ocr",
+    "color_id": "10"
+  },
+  {
+    "name": "DEKA FIT NorCal (Sacramento)",
+    "date_start": "2026-04-25T00:00:00",
+    "date_end": "2026-04-26T00:00:00",
+    "location": "Sacramento, CA",
+    "country": "USA",
+    "level": "elite",
+    "event_type": "deka_fit",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://www.spartan.com/en/race/find-a-race?race-type=deka",
+    "description": "DEKA FIT: 10 functional training zones × 500m run = 5K total. Spartanin nopeimmin kasvava sarja.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "deka",
+    "color_id": "2"
   },
   {
     "name": "Far East Throwdown",
@@ -222,7 +420,9 @@
     "info_url": "https://www.fareastthrowdown.com/",
     "description": "CrossFit Semifinal — Ind 1M/1W + 1 Team\nAikataulu (EET): 20:00–04:00 (alkaa 30.4.)",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "crossfit",
+    "color_id": "11"
   },
   {
     "name": "Copa Sur",
@@ -237,7 +437,9 @@
     "info_url": "https://cfcopasur.com/",
     "description": "CrossFit Semifinal — Ind 2M/2W + 1 Team\nAikataulu (EET): 08:00–16:00",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "crossfit",
+    "color_id": "11"
   },
   {
     "name": "Magic City Games",
@@ -252,7 +454,9 @@
     "info_url": "https://magiccity.games/",
     "description": "CrossFit Semifinal — Masters only\nAikataulu (EET): 10:00–18:00",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "crossfit",
+    "color_id": "11"
   },
   {
     "name": "WFP Tour Stop 1 — London Pro",
@@ -267,7 +471,9 @@
     "info_url": "https://worldfitnessproject.com/tour/tour-stop-1",
     "description": "Pro Men/Women (50 athletes) + Elite Teams (20) + Project 1",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "wfp",
+    "color_id": "4"
   },
   {
     "name": "Age-Group Online Semifinal",
@@ -282,7 +488,9 @@
     "info_url": null,
     "description": "CrossFit Semifinal — Masters + Teenagers (online)\nAikataulu (EET): 15:00–15:00",
     "is_all_day": true,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "crossfit",
+    "color_id": "11"
   },
   {
     "name": "HYROX Helsinki",
@@ -297,7 +505,43 @@
     "info_url": "https://hyrox.com/event/hyrox-helsinki/",
     "description": "HYROX makes its Finland debut — 8km run + 8 functional stations",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "hyrox",
+    "color_id": "5"
+  },
+  {
+    "name": "Red Bull 400 Ironwood",
+    "date_start": "2026-05-09T00:00:00",
+    "date_end": "2026-05-09T00:00:00",
+    "location": "Ironwood, MI",
+    "country": "USA",
+    "level": "elite",
+    "event_type": "ocr",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://www.redbull.com/us-en/event-series/rb-400-usa",
+    "description": "Red Bull 400 Copper Peak.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "ocr",
+    "color_id": "10"
+  },
+  {
+    "name": "DEKA FIT Austin",
+    "date_start": "2026-05-09T00:00:00",
+    "date_end": "2026-05-10T00:00:00",
+    "location": "Austin, TX",
+    "country": "USA",
+    "level": "elite",
+    "event_type": "deka_fit",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://www.spartan.com/en/race/find-a-race?race-type=deka",
+    "description": "DEKA FIT: 10 functional training zones × 500m run = 5K total. Spartanin nopeimmin kasvava sarja.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "deka",
+    "color_id": "2"
   },
   {
     "name": "French Throwdown",
@@ -312,7 +556,26 @@
     "info_url": "https://www.frenchthrowdown.com/",
     "description": "CrossFit Semifinal — Ind 3M/3W + 3 Teams + Masters\nAikataulu (EET): 03:00–13:00",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "crossfit",
+    "color_id": "11"
+  },
+  {
+    "name": "ATHX Berlin 2026",
+    "date_start": "2026-05-16T00:00:00",
+    "date_end": "2026-05-16T00:00:00",
+    "location": "Arena Halle Berlin",
+    "country": "Germany",
+    "level": "elite",
+    "event_type": "athx",
+    "youtube_url": "https://www.youtube.com/@ATHXGames",
+    "ticket_url": null,
+    "info_url": "https://athxgames.com/events/01k8b743fr5gaejbckwabswn8d",
+    "description": "ATHX: 2.5h continuous fitness competition — 6 zones",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "athx",
+    "color_id": "6"
   },
   {
     "name": "Torian Pro",
@@ -327,7 +590,9 @@
     "info_url": "https://www.torianpro.com/",
     "description": "CrossFit Semifinal — Ind 3M/3W + 3 Teams + Masters\nAikataulu (EET): 19:00–03:00 (alkaa 21.5.)",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "crossfit",
+    "color_id": "11"
   },
   {
     "name": "Rebel Renegade Games",
@@ -342,7 +607,26 @@
     "info_url": "https://rebelrenegadegames.com/",
     "description": "CrossFit Semifinal — Ind 1M/1W + 1 Team\nAikataulu (EET): 03:00–11:00",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "crossfit",
+    "color_id": "11"
+  },
+  {
+    "name": "Adventure Race Rovaniemi",
+    "date_start": "2026-05-23T00:00:00",
+    "date_end": "2026-05-23T00:00:00",
+    "location": "Rovaniemi",
+    "country": "Finland",
+    "level": "hobby",
+    "event_type": "adventure_race",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://adventurerace.fi/",
+    "description": "Ounasvaaran maastossa — työyhteisöjen seikkailukisa.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "adventure",
+    "color_id": "7"
   },
   {
     "name": "Syndicate Crown",
@@ -357,7 +641,9 @@
     "info_url": "https://www.syndicatecrown.com/",
     "description": "CrossFit Semifinal — Ind 3M/3W + 3 Teams\nAikataulu (EET): 09:00–17:00",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "crossfit",
+    "color_id": "11"
   },
   {
     "name": "MAD Fitness Festival",
@@ -372,7 +658,9 @@
     "info_url": "https://madfitnessfestival.com/en/home/",
     "description": "CrossFit Semifinal — Ind 3M/3W + 1 Team\nAikataulu (EET): 03:00–11:00",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "crossfit",
+    "color_id": "11"
   },
   {
     "name": "Northern California Classic",
@@ -387,7 +675,9 @@
     "info_url": "https://thenorcalclassic.com/",
     "description": "CrossFit Semifinal — Ind 2M/2W\nAikataulu (EET): 12:00–20:00",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "crossfit",
+    "color_id": "11"
   },
   {
     "name": "HYROX European Championships",
@@ -402,7 +692,60 @@
     "info_url": null,
     "description": "HYROX European Championships — elite qualification",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "hyrox",
+    "color_id": "5"
+  },
+  {
+    "name": "ATHX Dublin 2026",
+    "date_start": "2026-05-30T00:00:00",
+    "date_end": "2026-05-30T00:00:00",
+    "location": "RDS Dublin",
+    "country": "Ireland",
+    "level": "elite",
+    "event_type": "athx",
+    "youtube_url": "https://www.youtube.com/@ATHXGames",
+    "ticket_url": null,
+    "info_url": "https://athxgames.com/events/01k8b7jd8b2etcvybdqprk9jw1",
+    "description": "ATHX: 2.5h continuous fitness competition — 6 zones",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "athx",
+    "color_id": "6"
+  },
+  {
+    "name": "Strong Viking Hofstade",
+    "date_start": "2026-05-30T00:00:00",
+    "date_end": "2026-05-30T00:00:00",
+    "location": "Hofstade",
+    "country": "Belgium",
+    "level": "elite",
+    "event_type": "ocr",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://strongviking.com/en/events/",
+    "description": "Strong Viking — 4-42 km obstaclerun Belgiassa.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "ocr",
+    "color_id": "10"
+  },
+  {
+    "name": "DEKA FIT Denver",
+    "date_start": "2026-05-30T00:00:00",
+    "date_end": "2026-05-30T00:00:00",
+    "location": "Aurora, CO",
+    "country": "USA",
+    "level": "elite",
+    "event_type": "deka_fit",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://www.spartan.com/en/race/find-a-race?race-type=deka",
+    "description": "DEKA FIT: 10 functional training zones × 500m run = 5K total. Spartanin nopeimmin kasvava sarja.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "deka",
+    "color_id": "2"
   },
   {
     "name": "Team Online Semifinals",
@@ -417,7 +760,26 @@
     "info_url": null,
     "description": "CrossFit Semifinal — 7 Teams (online)\nAikataulu (EET): 15:00–15:00",
     "is_all_day": true,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "crossfit",
+    "color_id": "11"
+  },
+  {
+    "name": "IPF World Classic Championships 2026",
+    "date_start": "2026-06-08T00:00:00",
+    "date_end": "2026-06-14T00:00:00",
+    "location": "Druskininkai",
+    "country": "Lithuania",
+    "level": "elite",
+    "event_type": "powerlifting",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://www.powerlifting.sport/",
+    "description": "IPF World Classic Open — siirretty Dubaista Liettuaan.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "powerlifting",
+    "color_id": "1"
   },
   {
     "name": "Individual Online Semifinals",
@@ -432,7 +794,9 @@
     "info_url": null,
     "description": "CrossFit Semifinal — Ind 7M/7W (online)\nAikataulu (EET): 15:00–15:00",
     "is_all_day": true,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "crossfit",
+    "color_id": "11"
   },
   {
     "name": "Turku Tuomiopäivä",
@@ -447,7 +811,9 @@
     "info_url": "https://reppi.fi/events",
     "description": "Suomen suurin crossfit-kisa — elite + hobby divisions",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "finnish",
+    "color_id": "3"
   },
   {
     "name": "LatAM Masters",
@@ -462,7 +828,9 @@
     "info_url": "https://www.latammasters.com/",
     "description": "CrossFit Semifinal — Masters only\nAikataulu (EET): 10:00–18:00",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "crossfit",
+    "color_id": "11"
   },
   {
     "name": "HYROX World Championships",
@@ -477,7 +845,94 @@
     "info_url": null,
     "description": "HYROX World Championships 2026",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "hyrox",
+    "color_id": "5"
+  },
+  {
+    "name": "Strong Viking Wijchen",
+    "date_start": "2026-06-12T00:00:00",
+    "date_end": "2026-06-14T00:00:00",
+    "location": "Wijchen",
+    "country": "Netherlands",
+    "level": "elite",
+    "event_type": "ocr",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://strongviking.com/en/events/",
+    "description": "Strong Viking Wijchen — 3 päivän OCR-festivaali.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "ocr",
+    "color_id": "10"
+  },
+  {
+    "name": "Tough Mudder Berlin-Brandenburg",
+    "date_start": "2026-06-13T00:00:00",
+    "date_end": "2026-06-14T00:00:00",
+    "location": "Spargelhof Klaistow",
+    "country": "Germany",
+    "level": "elite",
+    "event_type": "ocr",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://toughmudder.de/en/events/berlin-brandenburg-en/",
+    "description": "Tough Mudder Berlin — klassikko-OCR Saksassa.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "ocr",
+    "color_id": "10"
+  },
+  {
+    "name": "ATHX Glasgow 2026",
+    "date_start": "2026-06-20T00:00:00",
+    "date_end": "2026-06-21T00:00:00",
+    "location": "SEC",
+    "country": "UK",
+    "level": "elite",
+    "event_type": "athx",
+    "youtube_url": "https://www.youtube.com/@ATHXGames",
+    "ticket_url": null,
+    "info_url": "https://athxgames.com/events/01k8b7k56e7bca5p1ybdfhgat9",
+    "description": "ATHX: 2.5h continuous fitness competition — 6 zones",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "athx",
+    "color_id": "6"
+  },
+  {
+    "name": "Endurance Quest Lohja (ARWS)",
+    "date_start": "2026-06-26T00:00:00",
+    "date_end": "2026-06-28T00:00:00",
+    "location": "Lohja",
+    "country": "Finland",
+    "level": "elite",
+    "event_type": "adventure_race",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://www.arworldseries.com/",
+    "description": "Adventure Racing World Series — European Series. Huipputason seikkailu-urheilu Suomessa! Suunnistus, pyöräily, melonta, köysilajit.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "adventure",
+    "color_id": "7"
+  },
+  {
+    "name": "DEKA FIT Boston",
+    "date_start": "2026-06-26T00:00:00",
+    "date_end": "2026-06-28T00:00:00",
+    "location": "Boston, MA",
+    "country": "USA",
+    "level": "elite",
+    "event_type": "deka_fit",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://www.spartan.com/en/race/find-a-race?race-type=deka",
+    "description": "DEKA FIT: 10 functional training zones × 500m run = 5K total. Spartanin nopeimmin kasvava sarja.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "deka",
+    "color_id": "2"
   },
   {
     "name": "WFP Tour Stop 2 Qualifier",
@@ -492,7 +947,26 @@
     "info_url": "https://worldfitnessproject.com/tour/tour-overview",
     "description": "Online qualifier for Grand Park Pro",
     "is_all_day": true,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "wfp",
+    "color_id": "4"
+  },
+  {
+    "name": "Strong Viking Ultra Frankfurt",
+    "date_start": "2026-07-04T00:00:00",
+    "date_end": "2026-07-05T00:00:00",
+    "location": "Frankfurt",
+    "country": "Germany",
+    "level": "elite",
+    "event_type": "ocr",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://strongviking.com/en/events/",
+    "description": "Strong Viking Frankfurt + Ultra Viking (60 km, 135+ estettä).",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "ocr",
+    "color_id": "10"
   },
   {
     "name": "Yyteri Sandstorm",
@@ -507,7 +981,9 @@
     "info_url": "https://reppi.fi/events",
     "description": "Finaalitapahtuma Yyterissä — elite + hobby",
     "is_all_day": true,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "finnish",
+    "color_id": "3"
   },
   {
     "name": "Unbroken Karsinnat",
@@ -522,7 +998,43 @@
     "info_url": "https://reppi.fi/events",
     "description": "Unbroken-kisojen online-karsinnat",
     "is_all_day": true,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "finnish",
+    "color_id": "3"
+  },
+  {
+    "name": "Red Bull 400 Courchevel",
+    "date_start": "2026-07-10T00:00:00",
+    "date_end": "2026-07-10T00:00:00",
+    "location": "Courchevel",
+    "country": "France",
+    "level": "elite",
+    "event_type": "ocr",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://www.redbull.com/us-en/events",
+    "description": "Maailman jyrkin 400m porrasjuoksu hyppyrimäessä.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "ocr",
+    "color_id": "10"
+  },
+  {
+    "name": "DEKA FIT Chicago",
+    "date_start": "2026-07-10T00:00:00",
+    "date_end": "2026-07-12T00:00:00",
+    "location": "Chicago, IL",
+    "country": "USA",
+    "level": "elite",
+    "event_type": "deka_fit",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://www.spartan.com/en/race/find-a-race?race-type=deka",
+    "description": "DEKA FIT: 10 functional training zones × 500m run = 5K total. Spartanin nopeimmin kasvava sarja.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "deka",
+    "color_id": "2"
   },
   {
     "name": "Masters CrossFit Games 2026",
@@ -537,7 +1049,9 @@
     "info_url": null,
     "description": "Masters CrossFit Games",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "crossfit",
+    "color_id": "11"
   },
   {
     "name": "CrossFit Games 2026",
@@ -552,7 +1066,9 @@
     "info_url": "https://games.crossfit.com/season/2026",
     "description": "The ultimate test of fitness — 20th anniversary Games",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "crossfit",
+    "color_id": "11"
   },
   {
     "name": "Monster Games (WFP Partner)",
@@ -567,7 +1083,111 @@
     "info_url": null,
     "description": "WFP partner — Masters 35-55+ Finals invite",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "wfp",
+    "color_id": "4"
+  },
+  {
+    "name": "DEKA FIT Philadelphia",
+    "date_start": "2026-08-07T00:00:00",
+    "date_end": "2026-08-09T00:00:00",
+    "location": "Philadelphia, PA",
+    "country": "USA",
+    "level": "elite",
+    "event_type": "deka_fit",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://www.spartan.com/en/race/find-a-race?race-type=deka",
+    "description": "DEKA FIT: 10 functional training zones × 500m run = 5K total. Spartanin nopeimmin kasvava sarja.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "deka",
+    "color_id": "2"
+  },
+  {
+    "name": "ATHX Copenhagen 2026",
+    "date_start": "2026-08-15T00:00:00",
+    "date_end": "2026-08-15T00:00:00",
+    "location": "Bella Centre",
+    "country": "Denmark",
+    "level": "elite",
+    "event_type": "athx",
+    "youtube_url": "https://www.youtube.com/@ATHXGames",
+    "ticket_url": null,
+    "info_url": "https://athxgames.com/events/01k8b7kghhb3nk1h7gvshdxsjw",
+    "description": "ATHX: 2.5h continuous fitness competition — 6 zones",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "athx",
+    "color_id": "6"
+  },
+  {
+    "name": "ATHX Birmingham 2026",
+    "date_start": "2026-08-22T00:00:00",
+    "date_end": "2026-08-23T00:00:00",
+    "location": "NEC Birmingham",
+    "country": "UK",
+    "level": "elite",
+    "event_type": "athx",
+    "youtube_url": "https://www.youtube.com/@ATHXGames",
+    "ticket_url": null,
+    "info_url": "https://athxgames.com/events/01k8b7ktbk6j2am0j31tdf0v72",
+    "description": "ATHX: 2.5h continuous fitness competition — 6 zones",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "athx",
+    "color_id": "6"
+  },
+  {
+    "name": "Tough Viking Helsinki",
+    "date_start": "2026-08-22T00:00:00",
+    "date_end": "2026-08-22T00:00:00",
+    "location": "Helsinki",
+    "country": "Finland",
+    "level": "elite",
+    "event_type": "ocr_tough_viking",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://toughviking.se/tough-viking-helsinki/",
+    "description": "Pohjoismaiden suurin OCR. Suomen ainoa Tough Viking -tapahtuma. 8-15 km, estettä.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "ocr",
+    "color_id": "10"
+  },
+  {
+    "name": "Tough Viking Djurgården 5K",
+    "date_start": "2026-08-22T00:00:00",
+    "date_end": "2026-08-22T00:00:00",
+    "location": "Tukholma",
+    "country": "Sweden",
+    "level": "elite",
+    "event_type": "ocr",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://toughviking.se/kungliga-djurgarden-22-augusti/",
+    "description": "Tough Viking Kungl. Djurgården 5K.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "ocr",
+    "color_id": "10"
+  },
+  {
+    "name": "DEKA FIT Raleigh",
+    "date_start": "2026-08-22T00:00:00",
+    "date_end": "2026-08-23T00:00:00",
+    "location": "Raleigh, NC",
+    "country": "USA",
+    "level": "elite",
+    "event_type": "deka_fit",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://www.spartan.com/en/race/find-a-race?race-type=deka",
+    "description": "DEKA FIT: 10 functional training zones × 500m run = 5K total. Spartanin nopeimmin kasvava sarja.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "deka",
+    "color_id": "2"
   },
   {
     "name": "WFP Tour Stop 2 — Grand Park Pro",
@@ -582,7 +1202,60 @@
     "info_url": "https://worldfitnessproject.com/tour/tour-overview",
     "description": "Pro Men/Women (50) + Elite Teams (20) + Project 1",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "wfp",
+    "color_id": "4"
+  },
+  {
+    "name": "ATHX Barcelona 2026",
+    "date_start": "2026-09-05T00:00:00",
+    "date_end": "2026-09-05T00:00:00",
+    "location": "Fira Barcelona",
+    "country": "Spain",
+    "level": "elite",
+    "event_type": "athx",
+    "youtube_url": "https://www.youtube.com/@ATHXGames",
+    "ticket_url": null,
+    "info_url": "https://athxgames.com/events/01k8b7mbq0ck7hj91405k8k4nf",
+    "description": "ATHX: 2.5h continuous fitness competition — 6 zones",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "athx",
+    "color_id": "6"
+  },
+  {
+    "name": "DEKA FIT Ft. Lauderdale",
+    "date_start": "2026-09-11T00:00:00",
+    "date_end": "2026-09-13T00:00:00",
+    "location": "Ft. Lauderdale, FL",
+    "country": "USA",
+    "level": "elite",
+    "event_type": "deka_fit",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://www.spartan.com/en/race/find-a-race?race-type=deka",
+    "description": "DEKA FIT: 10 functional training zones × 500m run = 5K total. Spartanin nopeimmin kasvava sarja.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "deka",
+    "color_id": "2"
+  },
+  {
+    "name": "ATHX Marseille 2026",
+    "date_start": "2026-09-19T00:00:00",
+    "date_end": "2026-09-19T00:00:00",
+    "location": "Marseille Chanot",
+    "country": "France",
+    "level": "elite",
+    "event_type": "athx",
+    "youtube_url": "https://www.youtube.com/@ATHXGames",
+    "ticket_url": null,
+    "info_url": "https://athxgames.com/events/01k8b7mm46ynsfm2ygsjvr0wz4",
+    "description": "ATHX: 2.5h continuous fitness competition — 6 zones",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "athx",
+    "color_id": "6"
   },
   {
     "name": "WFP Finals Qualifier",
@@ -597,7 +1270,9 @@
     "info_url": "https://worldfitnessproject.com/tour/tour-overview",
     "description": "Online qualifier for World Fitness Finals",
     "is_all_day": true,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "wfp",
+    "color_id": "4"
   },
   {
     "name": "Unbroken Finaalit",
@@ -612,7 +1287,43 @@
     "info_url": "https://reppi.fi/events",
     "description": "Unbroken-kisojen finaalit Vantaalla",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "finnish",
+    "color_id": "3"
+  },
+  {
+    "name": "DEKA FIT New York",
+    "date_start": "2026-09-25T00:00:00",
+    "date_end": "2026-09-27T00:00:00",
+    "location": "New York, NY",
+    "country": "USA",
+    "level": "elite",
+    "event_type": "deka_fit",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://www.spartan.com/en/race/find-a-race?race-type=deka",
+    "description": "DEKA FIT: 10 functional training zones × 500m run = 5K total. Spartanin nopeimmin kasvava sarja.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "deka",
+    "color_id": "2"
+  },
+  {
+    "name": "ATHX Liverpool 2026",
+    "date_start": "2026-10-03T00:00:00",
+    "date_end": "2026-10-04T00:00:00",
+    "location": "Exhibition Centre L'pool",
+    "country": "UK",
+    "level": "elite",
+    "event_type": "athx",
+    "youtube_url": "https://www.youtube.com/@ATHXGames",
+    "ticket_url": null,
+    "info_url": "https://athxgames.com/events/01k8b7nfsdk5cbdrxf2h0hgy9v",
+    "description": "ATHX: 2.5h continuous fitness competition — 6 zones",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "athx",
+    "color_id": "6"
   },
   {
     "name": "Heart of America (WFP Partner)",
@@ -627,7 +1338,9 @@
     "info_url": null,
     "description": "WFP partner — Elite Teams Finals invite",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "wfp",
+    "color_id": "4"
   },
   {
     "name": "Oslo Throwdown (WFP Partner)",
@@ -642,7 +1355,9 @@
     "info_url": null,
     "description": "WFP partner event",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "wfp",
+    "color_id": "4"
   },
   {
     "name": "HYROX Hamburg",
@@ -657,7 +1372,9 @@
     "info_url": null,
     "description": "",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "hyrox",
+    "color_id": "5"
   },
   {
     "name": "Rogue Invitational",
@@ -672,7 +1389,9 @@
     "info_url": "https://roguefitness.com/invitational",
     "description": "World's strongest CrossFit + Strongman invitational",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "other",
+    "color_id": "8"
   },
   {
     "name": "iF3 Masters World Championships",
@@ -687,7 +1406,26 @@
     "info_url": "https://if3.com",
     "description": "iF3 Masters World Championships",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "other",
+    "color_id": "8"
+  },
+  {
+    "name": "Spartan World Championship 2026",
+    "date_start": "2026-10-30T00:00:00",
+    "date_end": "2026-11-01T00:00:00",
+    "location": "Abu Dhabi",
+    "country": "UAE",
+    "level": "elite",
+    "event_type": "ocr",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://www.spartan.com/",
+    "description": "Spartan World Championship — Sprint, Super, Beast.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "ocr",
+    "color_id": "10"
   },
   {
     "name": "HYROX Oslo",
@@ -702,7 +1440,77 @@
     "info_url": null,
     "description": "",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "hyrox",
+    "color_id": "5"
+  },
+  {
+    "name": "ATHX Amsterdam 2026",
+    "date_start": "2026-11-07T00:00:00",
+    "date_end": "2026-11-07T00:00:00",
+    "location": "RAI Amsterdam",
+    "country": "Netherlands",
+    "level": "elite",
+    "event_type": "athx",
+    "youtube_url": "https://www.youtube.com/@ATHXGames",
+    "ticket_url": null,
+    "info_url": "https://athxgames.com/events/01k8b7nxgwcr70a86vqf2y6ck4",
+    "description": "ATHX: 2.5h continuous fitness competition — 6 zones",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "athx",
+    "color_id": "6"
+  },
+  {
+    "name": "DEKA FIT Washington DC",
+    "date_start": "2026-11-20T00:00:00",
+    "date_end": "2026-11-22T00:00:00",
+    "location": "Washington, DC",
+    "country": "USA",
+    "level": "elite",
+    "event_type": "deka_fit",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://www.spartan.com/en/race/find-a-race?race-type=deka",
+    "description": "DEKA FIT: 10 functional training zones × 500m run = 5K total. Spartanin nopeimmin kasvava sarja.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "deka",
+    "color_id": "2"
+  },
+  {
+    "name": "WPO Powerlifting Championship Las Vegas",
+    "date_start": "2026-11-20T00:00:00",
+    "date_end": "2026-11-22T00:00:00",
+    "location": "Las Vegas, NV",
+    "country": "USA",
+    "level": "elite",
+    "event_type": "powerlifting",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://www.powerlifting.sport/",
+    "description": "World Powerlifting Organization — Westgate Resort & Casino.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "powerlifting",
+    "color_id": "1"
+  },
+  {
+    "name": "ATHX Finals Lisbon 2026",
+    "date_start": "2026-11-27T00:00:00",
+    "date_end": "2026-11-29T00:00:00",
+    "location": "Lisbon Congress Centre",
+    "country": "Portugal",
+    "level": "elite",
+    "event_type": "athx",
+    "youtube_url": "https://www.youtube.com/@ATHXGames",
+    "ticket_url": null,
+    "info_url": "https://athxgames.com/events/01kk1b7p4a1pzebw5dd7q2z7wn",
+    "description": "ATHX: 2.5h continuous fitness competition — 6 zones",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "athx",
+    "color_id": "6"
   },
   {
     "name": "WFP World Fitness Finals",
@@ -717,7 +1525,9 @@
     "info_url": "https://www.worldfitnessproject.com/world-fitness-finals",
     "description": "Season finale — Pro, Teams, Age Groups + Project 1",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "wfp",
+    "color_id": "4"
   },
   {
     "name": "Vaasa Showdown",
@@ -732,7 +1542,9 @@
     "info_url": "https://reppi.fi/events",
     "description": "SM-karsintakisa — TBA",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "finnish",
+    "color_id": "3"
   },
   {
     "name": "Finnish CrossFit Championship",
@@ -747,7 +1559,9 @@
     "info_url": "https://reppi.fi/events",
     "description": "Suomen mestaruuskisat — TBA",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "finnish",
+    "color_id": "3"
   },
   {
     "name": "Wodapalooza SoCal",
@@ -762,7 +1576,9 @@
     "info_url": "https://wodapalooza.com",
     "description": "September 2026 — dates TBA",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "other",
+    "color_id": "8"
   },
   {
     "name": "CRASH Crucible",
@@ -777,7 +1593,9 @@
     "info_url": "https://crashcrucible.com",
     "description": "CRASH Crucible — October 2026, dates TBA",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "other",
+    "color_id": "8"
   },
   {
     "name": "iF3 World Championships",
@@ -792,7 +1610,9 @@
     "info_url": "https://if3.com",
     "description": "iF3 World Championships — Nov/Dec 2026, TBA",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "other",
+    "color_id": "8"
   },
   {
     "name": "Turf Games",
@@ -807,7 +1627,9 @@
     "info_url": "https://turfgames.com",
     "description": "UK functional fitness — multiple dates TBA",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "other",
+    "color_id": "8"
   },
   {
     "name": "ATHX Games",
@@ -822,6 +1644,59 @@
     "info_url": "https://athxgames.com",
     "description": "UK functional fitness competition — dates TBA",
     "is_all_day": false,
-    "video_feeds": null
+    "video_feeds": null,
+    "category": "other",
+    "color_id": "8"
+  },
+  {
+    "name": "World's Toughest Mudder 2026",
+    "date_start": null,
+    "date_end": null,
+    "location": "TBD",
+    "country": "USA",
+    "level": "elite",
+    "event_type": "ocr",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://toughmudder.com/tough-mudder-endurance-series/",
+    "description": "24h endurance OCR — dates TBA.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "ocr",
+    "color_id": "10"
+  },
+  {
+    "name": "Red Bull Gym Clash World Final 2026",
+    "date_start": null,
+    "date_end": null,
+    "location": "TBD",
+    "country": "TBD",
+    "level": "elite",
+    "event_type": "gym_clash",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://www.redbull.com/us-en/event-series/red-bull-gym-clash",
+    "description": "Red Bull Gym Clash — 4 hengen tiimit (2M+2N), 4 functional fitness -haastetta. Kansalliset finaalit → maailmanfinaali. Dates TBA.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "gym_clash",
+    "color_id": "4"
+  },
+  {
+    "name": "The Strongman Classic 2026",
+    "date_start": null,
+    "date_end": null,
+    "location": "Royal Albert Hall, London",
+    "country": "UK",
+    "level": "elite",
+    "event_type": "strongman",
+    "youtube_url": null,
+    "ticket_url": null,
+    "info_url": "https://giants-live.com/",
+    "description": "Giants Live — The Strongman Classic. Dates TBA.",
+    "is_all_day": false,
+    "video_feeds": null,
+    "category": "strongman",
+    "color_id": "11"
   }
 ]

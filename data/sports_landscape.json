@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "last_updated": "2026-05-07",
   "categories": {
     "functional_fitness": {
@@ -9,67 +9,56 @@
         "crossfit_games": {
           "label": "CrossFit Games",
           "tracked": true,
-          "notes": "Koko ekosysteemi: Open, QF, Semifinals, Games, Masters, Age Group. Seurataan kattavasti.",
+          "notes": "Koko ekosysteemi: Open, QF, Semifinals, Games, Masters, Age Group. 20 tapahtumaa.",
           "sources": ["https://games.crossfit.com/"],
           "scraper": "CrossFitGamesScraper"
         },
         "wfp": {
           "label": "World Fitness Project",
           "tracked": true,
-          "notes": "Tour Stopit + Partnerit + Finaalit. Seurataan kattavasti.",
+          "notes": "Tour Stopit + Partnerit + Finaalit. 10 tapahtumaa.",
           "sources": ["https://worldfitnessproject.com/"],
-          "scraper": "WFP_* scrapers"
+          "scraper": "WFPCompetitionScraper"
         },
         "hyrox": {
           "label": "HYROX",
           "tracked": true,
-          "notes": "Euroopan kisat + MM. Seurataan kattavasti.",
+          "notes": "Euroopan kisat + MM. 9 tapahtumaa.",
           "sources": ["https://hyrox.com/"],
           "scraper": "HYROXScraper"
         },
         "athx": {
           "label": "ATHX Games",
-          "tracked": "partial",
-          "notes": "Vain 1 event seurannassa (ATHX Games). Todellisuudessa 11 eventin kiertue: Berlin, Dublin, Glasgow, Copenhagen, Birmingham, Barcelona, Marseille, Liverpool, Amsterdam, Finals Lissabon.",
+          "tracked": true,
+          "notes": "Koko 10-event kiertue nyt seurannassa. Berlin, Dublin, Glasgow, Copenhagen, Birmingham, Barcelona, Marseille, Liverpool, Amsterdam, Finals Lisbon.",
           "sources": ["https://athxgames.com/events"],
-          "scraper": null,
-          "gap": "Seurataan vain 1/11 eventistä. Tarvitaan dedikoitu ATHX-scraper."
+          "scraper": "ATHXScraper"
         },
         "deka_fit": {
           "label": "DEKA FIT (Spartan)",
-          "tracked": false,
-          "notes": "10-zone functional fitness test: 500m juoksu × 10 + toiminnalliset liikkeet. 11 US-tapahtumaa + mahdolliset Euroopan kisat. DEKA World Championships.",
+          "tracked": true,
+          "notes": "11 US-tapahtumaa. 10-zone functional fitness test: 500m juoksu × 10 + toiminnalliset liikkeet.",
           "sources": ["https://www.spartan.com/en/race/find-a-race?race-type=deka"],
-          "scraper": null,
-          "gap": "Uusi kategoria. Spartanin alla, oma kilpailumuotonsa."
+          "scraper": "DEKAScraper"
         },
         "metrix": {
           "label": "METRIX Fitness Racing",
-          "tracked": false,
-          "notes": "UK-pohjainen fitness racing -sarja. London, Cambridge + expanding.",
+          "tracked": true,
+          "notes": "UK-pohjainen fitness racing. London + Cambridge.",
           "sources": ["https://metrix.fitness/"],
-          "scraper": null,
-          "gap": "Uusi kategoria. Kasvava sarja."
+          "scraper": "METRIXScraper"
         },
         "gym_clash": {
           "label": "Red Bull Gym Clash",
-          "tracked": false,
-          "notes": "4 hengen tiimit (2M+2N), Red Bullin järjestämä functional fitness. Kansalliset finaalit → kansainvälinen finaali.",
-          "sources": ["https://www.redbull.com/us-en/event-series/red-bull-gym-clash"],
-          "scraper": null,
-          "gap": "Uusi kategoria. Red Bullin brändi takaa näkyvyyttä."
-        },
-        "turf_games": {
-          "label": "Turf Games",
           "tracked": true,
-          "notes": "Seurannassa Turf Games (independent_elite). Varmista kattavuus.",
-          "sources": ["https://turfgames.com/"],
-          "scraper": "EliteEventScraper"
+          "notes": "4 hengen tiimit (2M+2N). World Final TBA.",
+          "sources": ["https://www.redbull.com/us-en/event-series/red-bull-gym-clash"],
+          "scraper": "GymClashScraper"
         },
         "independent_elite": {
           "label": "Riippumattomat eliittikisat",
-          "tracked": "partial",
-          "notes": "Wodapalooza, Rogue, TFX, iF3, MAD Fitfest seurannassa. Jatkuva täydennys uusista kisoista.",
+          "tracked": true,
+          "notes": "Wodapalooza, Rogue, TFX, CRASH, iF3, Turf Games. 10 tapahtumaa.",
           "sources": ["https://competitioncorner.net/", "https://thebarbellspin.com/competition/"],
           "scraper": "EliteEventScraper"
         }
@@ -77,174 +66,121 @@
     },
     "ocr": {
       "label": "Estejuoksut (OCR)",
-      "description": "Obstacle Course Racing — esteillä varustetut juoksutapahtumat. Toiminnallisen urheilun lähisukulainen.",
+      "description": "Obstacle Course Racing. 11 tapahtumaa: Tough Viking, Strong Viking, Tough Mudder, Spartan, Red Bull 400.",
       "series": {
         "tough_viking": {
           "label": "Tough Viking",
-          "tracked": false,
-          "notes": "Pohjoismaiden suurin OCR. Helsingissä tapahtuma. Tukholma, Göteborg. Kaudella 2026 useita kisoja.",
+          "tracked": true,
+          "notes": "Helsinki + Slottsskogen + Djurgården 5K. 3 tapahtumaa.",
           "sources": ["https://toughviking.se/"],
-          "scraper": null,
-          "gap": "Uusi kategoria. Helsinki-tapahtuma relevantti."
+          "scraper": "OCRScraper"
         },
         "strong_viking": {
           "label": "Strong Viking",
-          "tracked": false,
-          "notes": "4km–60km estejuoksuja Belgiassa, Hollannissa, Saksassa. Ultra Viking (60km, 135+ estettä) on maailman rankin OCR.",
+          "tracked": true,
+          "notes": "Hofstade, Wijchen, Frankfurt (sis. Ultra Viking 60km).",
           "sources": ["https://strongviking.com/en/events/"],
-          "scraper": null,
-          "gap": "Uusi kategoria."
+          "scraper": "OCRScraper"
         },
         "tough_mudder": {
           "label": "Tough Mudder",
-          "tracked": false,
-          "notes": "Maailman tunnetuin OCR. 5K–24h tapahtumia. Infinity ja World's Toughest Mudder endurance-sarjat.",
+          "tracked": true,
+          "notes": "Berlin-Brandenburg + World's Toughest Mudder.",
           "sources": ["https://toughmudder.com/events/"],
-          "scraper": null,
-          "gap": "Uusi kategoria."
+          "scraper": "OCRScraper"
         },
         "spartan_race": {
           "label": "Spartan Race",
-          "tracked": false,
-          "notes": "89 US-racepäivää + Euroopan kisat. Sprint, Super, Beast, Ultra. DEKA FIT on Spartanin alla (erillinen).",
+          "tracked": true,
+          "notes": "World Championship Abu Dhabi.",
           "sources": ["https://www.spartan.com/"],
-          "scraper": null,
-          "gap": "Uusi kategoria. DEKA on oma kokonaisuutensa."
+          "scraper": "OCRScraper"
         },
         "red_bull_400": {
           "label": "Red Bull 400",
-          "tracked": false,
-          "notes": "Maailman jyrkin 400m porrasjuoksu. Hyppyrimäissä ympäri maailmaa (Courchevel, Ironwood MI, jne).",
+          "tracked": true,
+          "notes": "Courchevel + Ironwood MI.",
           "sources": ["https://www.redbull.com/us-en/event-series/rb-400-usa"],
-          "scraper": null,
-          "gap": "Uusi kategoria. Red Bull -brändin extreme-tapahtuma."
+          "scraper": "OCRScraper"
         }
       }
     },
     "strength_sports": {
       "label": "Voimalajit",
-      "description": "Strongman, painonnosto, voimanosto. Toiminnallisen urheilun voimakomponentin puhdas muoto.",
+      "description": "Strongman, painonnosto, voimanosto. 7 tapahtumaa.",
       "series": {
         "strongman": {
           "label": "Strongman",
-          "tracked": false,
-          "notes": "World's Strongest Man, Arnold Strongman Classic, Europe's Strongest Man, Rogue Invitational (strongman), Giants Live -kiertue.",
-          "sources": ["https://www.theworldsstrongestman.com/", "https://www.roguefitness.com/arnold-strongman-classic"],
-          "scraper": null,
-          "gap": "Uusi kategoria. Suomessa vahva strongman-kulttuuri."
+          "tracked": true,
+          "notes": "Arnold Classic, Europe's Strongest Man, WSM, Strongman Classic. 4 tapahtumaa.",
+          "sources": ["https://www.theworldsstrongestman.com/", "https://giants-live.com/"],
+          "scraper": "StrengthSportsScraper"
         },
         "weightlifting": {
           "label": "Painonnosto",
-          "tracked": false,
-          "notes": "European Championships Batumi 19.-26.4.2026, World Championships, kansalliset kisat.",
-          "sources": ["https://ewf.sport/", "https://iwf.sport/"],
-          "scraper": null,
-          "gap": "Uusi kategoria. Olympialaji, mutta etäällä toiminnallisesta urheilusta."
+          "tracked": true,
+          "notes": "European Championships Batumi. 1 tapahtuma.",
+          "sources": ["https://ewf.sport/"],
+          "scraper": "StrengthSportsScraper"
         },
         "powerlifting": {
           "label": "Voimanosto",
-          "tracked": false,
-          "notes": "IPF Classic Worlds, EPF Europeans, kansalliset klassisen ja varusteellisen kisat.",
+          "tracked": true,
+          "notes": "IPF World Classic Druskininkai + WPO Las Vegas.",
           "sources": ["https://www.powerlifting.sport/"],
-          "scraper": null,
-          "gap": "Uusi kategoria. Etäällä toiminnallisesta urheilusta, mutta crossover-yleisöä."
+          "scraper": "StrengthSportsScraper"
         }
       }
     },
     "adventure_racing": {
       "label": "Seikkailu-urheilu",
-      "description": "Monilajiset extreme-seikkailukilpailut. Yhdistävät suunnistusta, pyöräilyä, melontaa, köysitoimintaa.",
+      "description": "ARWS, Arctic extreme events. 3 tapahtumaa.",
       "series": {
         "ar_world_series": {
           "label": "AR World Series",
-          "tracked": false,
-          "notes": "Endurance Quest Lohja 26.-28.6.2026 (ARWS European Series). Maailman kärkitason seikkailu-urheilua Suomessa!",
+          "tracked": true,
+          "notes": "Endurance Quest Lohja (ARWS European Series) + Adventure Race Rovaniemi.",
           "sources": ["https://www.arworldseries.com/"],
-          "scraper": null,
-          "gap": "Uusi kategoria. Endurance Quest on merkittävä kotimainen tapahtuma."
+          "scraper": "AdventureRaceScraper"
         },
         "arctic_events": {
           "label": "Arktiset extreme-tapahtumat",
-          "tracked": false,
-          "notes": "Arctic Circle Race (Grönlanti, 160km), Finland Arctic Challenge (jäämaraton, lumikenkä, fatbike). Adventure Race Rovaniemi.",
-          "sources": ["https://adventurerace.fi/", "https://arcticescapades.com/finland-arctic-challenge/"],
-          "scraper": null,
-          "gap": "Uusi kategoria. Eksoottisia ääriolosuhdetapahtumia."
+          "tracked": true,
+          "notes": "Arctic Circle Race (Grönlanti, 160km).",
+          "sources": ["https://adventurerace.fi/"],
+          "scraper": "AdventureRaceScraper"
         }
       }
     },
     "finnish_scene": {
       "label": "Kotimainen kenttä",
-      "description": "Suomalaiset toiminnallisen urheilun tapahtumat, joita Reppi.fi ei kata, tai uudet kotimaiset sarjat.",
+      "description": "Suomalaiset tapahtumat. 6 tapahtumaa.",
       "series": {
         "reppi_fi": {
           "label": "Reppi.fi tapahtumat",
           "tracked": true,
-          "notes": "Suomalaiset CrossFit/functional-tapahtumat Reppi.fi:n kautta. Seurataan kattavasti.",
+          "notes": "Suomalaiset CrossFit/functional-tapahtumat Reppi.fi:n kautta.",
           "sources": ["https://reppi.fi/"],
           "scraper": "ReppiScraper"
         },
         "finnish_ocr": {
           "label": "Kotimaiset OCR-tapahtumat",
-          "tracked": false,
-          "notes": "Tough Viking Helsinki, mahdolliset muut kotimaiset estejuoksut. Mahdollisesti SM-tason OCR-kisoja.",
+          "tracked": true,
+          "notes": "Tough Viking Helsinki nyt seurannassa.",
           "sources": ["https://toughviking.se/tough-viking-helsinki/"],
-          "scraper": null,
-          "gap": "Tough Viking Helsinki on merkittävä. Muita kotimaisia OCR-toimijoita?"
+          "scraper": "OCRScraper"
         },
         "finnish_extreme": {
           "label": "Kotimaiset extreme-tapahtumat",
-          "tracked": false,
-          "notes": "Endurance Quest Lohja, Adventure Race Rovaniemi, Finland Arctic Challenge, mahdolliset muut.",
-          "sources": ["https://www.arworldseries.com/", "https://adventurerace.fi/"],
-          "scraper": null,
-          "gap": "Endurance Quest on ARWS-tason kisa Suomessa — erittäin merkittävä."
+          "tracked": true,
+          "notes": "Endurance Quest Lohja + Adventure Race Rovaniemi.",
+          "sources": ["https://www.arworldseries.com/"],
+          "scraper": "AdventureRaceScraper"
         }
       }
     }
   },
-  "recommendations": [
-    {
-      "category": "ATHX Games täysi kiertue",
-      "reason": "Jo seurannassa (1 event), mutta puuttuu 10/11. Iso kansainvälinen sarja, vahva Eurooppa-painotus. Matalin hedelmä — skannataan jo osittain.",
-      "priority": "high"
-    },
-    {
-      "category": "Endurance Quest Lohja (ARWS)",
-      "reason": "Maailmanluokan seikkailu-urheilu Suomessa. Ainutlaatuinen kotimainen tapahtuma kansainvälisellä statuksella.",
-      "priority": "high"
-    },
-    {
-      "category": "Tough Viking Helsinki",
-      "reason": "Suomen suurin OCR-tapahtuma. Toiminnallisen urheilun harrastajien luonnollinen jatkumo.",
-      "priority": "medium"
-    },
-    {
-      "category": "DEKA FIT (Spartan)",
-      "reason": "Nopeimmin kasvava functional fitness -sarja USA:ssa. Spartanin jakeluverkosto takaa laajan näkyvyyden.",
-      "priority": "medium"
-    },
-    {
-      "category": "Red Bull Gym Clash",
-      "reason": "Red Bullin brändi, tiimiformaatti. Hyvä lisä tiimikilpailujen kategoriaan.",
-      "priority": "medium"
-    },
-    {
-      "category": "METRIX Fitness Racing",
-      "reason": "Kasvava UK-sarja. Pienempi kuin ATHX, mutta mielenkiintoinen formaatti.",
-      "priority": "low"
-    },
-    {
-      "category": "Spartan Race + Tough Mudder (Eurooppa)",
-      "reason": "Jos OCR kiinnostaa laajemmin. Massiiviset kansainväliset brändit.",
-      "priority": "low"
-    },
-    {
-      "category": "Voimalajit (Strongman/Painonnosto/Voimanosto)",
-      "reason": "Eri yleisö kuin toiminnallinen urheilu, mutta crossover-kiinnostusta erityisesti strongmaniin. Suomessa vahva strongman-skene.",
-      "priority": "low"
-    }
-  ],
+  "recommendations": [],
   "discovery_prompts": [
     "functional fitness competition series 2026 beyond crossfit hyrox",
     "new fitness racing competitions emerging 2026",
@@ -252,6 +188,27 @@
     "toiminnallinen urheilu uudet lajit tapahtumat 2026",
     "obstacle course racing major events Europe 2026",
     "adventure racing world series 2026 events calendar",
-    "hyrox alternatives similar functional fitness competitions"
-  ]
+    "hyrox alternatives similar functional fitness competitions",
+    "strongman competitions 2026 schedule",
+    "powerlifting olympic weightlifting 2026 championships"
+  ],
+  "color_system": {
+    "description": "Google Calendar colorId mapping for each category",
+    "colors": {
+      "crossfit": "11 (Bold Red)",
+      "wfp": "4 (Flamingo/Pink)",
+      "hyrox": "5 (Tangerine/Yellow-Orange)",
+      "athx": "6 (Tangerine/Orange)",
+      "deka": "2 (Sage/Green)",
+      "metrix": "3 (Grape/Purple)",
+      "gym_clash": "4 (Flamingo)",
+      "ocr": "10 (Basil/Dark Green)",
+      "strongman": "11 (Bold Red)",
+      "weightlifting": "9 (Blueberry/Dark Blue)",
+      "powerlifting": "1 (Lavender)",
+      "adventure": "7 (Peacock/Teal)",
+      "finnish": "3 (Grape)",
+      "other": "8 (Graphite/Gray)"
+    }
+  }
 }

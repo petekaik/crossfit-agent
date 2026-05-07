@@ -22,7 +22,7 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
-from scraper import Competition, CompetitionLevel
+from scraper import Competition, CompetitionLevel, CATEGORY_LABELS
 
 
 # Google Calendar API scopes
@@ -43,6 +43,7 @@ class CalendarEvent:
     timezone: str = DEFAULT_TIMEZONE
     source_url: Optional[str] = None
     is_all_day: bool = False
+    color_id: str = ""
 
 
 class GoogleCalendarSync:
@@ -312,14 +313,17 @@ class GoogleCalendarSync:
         # Calculate end date
         end_date = competition.date_end or (competition.date_start + timedelta(days=1))
         
+        category_label = CATEGORY_LABELS.get(competition.category, "")
+        prefix = f"[{category_label}] " if category_label else ""
         return CalendarEvent(
-            summary=f"[CrossFit] {competition.name}",
+            summary=f"{prefix}{competition.name}",
             description="\n".join(description_parts) if description_parts else "",
             start=competition.date_start,
             end=end_date,
             location=f"{competition.location}, {competition.country}",
             source_url=competition.info_url,
             is_all_day=competition.is_all_day,
+            color_id=competition.color_id,
         )
     
     def create_event(self, event: CalendarEvent) -> Optional[str]:
@@ -339,6 +343,10 @@ class GoogleCalendarSync:
                 ],
             },
         }
+        
+        # Add color if specified
+        if event.color_id:
+            event_body['colorId'] = event.color_id
         
         if event.is_all_day:
             # All-day event: no reminders (season periods are just informational)
@@ -385,6 +393,10 @@ class GoogleCalendarSync:
                 ],
             },
         }
+
+        # Add color if specified
+        if event.color_id:
+            event_body['colorId'] = event.color_id
 
         if event.is_all_day:
             event_body['start'] = {'date': event.start.strftime('%Y-%m-%d')}
@@ -461,7 +473,12 @@ class GoogleCalendarSync:
         if not self.service or not competition.date_start:
             return None
         
-        expected_summary = f"[CrossFit] {competition.name}"
+        category_label = CATEGORY_LABELS.get(competition.category, "")
+        if category_label:
+            expected_summary = f"[{category_label}] {competition.name}"
+        else:
+            expected_summary = competition.name
+        
         start_date = competition.date_start.strftime('%Y-%m-%d')
         
         # Check cache
@@ -473,6 +490,11 @@ class GoogleCalendarSync:
         key_no_prefix = (competition.name, start_date)
         if key_no_prefix in self._event_cache:
             return self._event_cache[key_no_prefix]
+        
+        # Also check old hardcoded [CrossFit] prefix for existing events
+        key_old_cf = (f"[CrossFit] {competition.name}", start_date)
+        if key_old_cf in self._event_cache:
+            return self._event_cache[key_old_cf]
         
         # Fallback: search across full competition date range
         if competition.date_end:
@@ -500,8 +522,6 @@ class GoogleCalendarSync:
                     
         except Exception as e:
             print(f"Warning: Error searching events for {competition.name}: {e}")
-            # Don't return None silently — log and fall through
-            # Returning None here would cause a duplicate creation
         
         return None
     
