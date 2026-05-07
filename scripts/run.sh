@@ -46,9 +46,12 @@ case "$CMD" in
     status)
         "$VENV_PYTHON" scripts/cron_runner.py status
         ;;
+    research)
+        "$VENV_PYTHON" scripts/research_new_events.py
+        ;;
     *)
         echo "Unknown command: $CMD"
-        echo "Usage: $0 {search|sync|full|status}"
+        echo "Usage: $0 {search|sync|full|status|research}"
         exit 1
         ;;
 esac
