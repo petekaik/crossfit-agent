@@ -479,20 +479,24 @@ class GoogleCalendarSync:
         else:
             expected_summary = competition.name
         
+        # Normalize dashes to match cache behavior (em/en-dash → hyphen)
+        expected_summary_norm = re.sub(r'[—–-]', '-', expected_summary)
+        name_norm = re.sub(r'[—–-]', '-', competition.name)
+        
         start_date = competition.date_start.strftime('%Y-%m-%d')
         
-        # Check cache
-        key = (expected_summary, start_date)
+        # Check cache (all keys normalized the same way)
+        key = (expected_summary_norm, start_date)
         if key in self._event_cache:
             return self._event_cache[key]
         
-        # Backwards compat: check without prefix
-        key_no_prefix = (competition.name, start_date)
+        # Backwards compat: check without prefix (normalized)
+        key_no_prefix = (name_norm, start_date)
         if key_no_prefix in self._event_cache:
             return self._event_cache[key_no_prefix]
         
-        # Also check old hardcoded [CrossFit] prefix for existing events
-        key_old_cf = (f"[CrossFit] {competition.name}", start_date)
+        # Also check old hardcoded [CrossFit] prefix (normalized)
+        key_old_cf = (f"[CrossFit] {name_norm}", start_date)
         if key_old_cf in self._event_cache:
             return self._event_cache[key_old_cf]
         
@@ -567,6 +571,91 @@ class GoogleCalendarSync:
         
         return unique
     
+    def _cleanup_ghost_events(self, competitions: List[Competition]) -> int:
+        """Remove ghost/duplicate events from calendar before syncing.
+        
+        Ghost events occur when the same competition was previously synced
+        with different dash characters (hyphen vs em-dash) or different
+        category prefixes (old [CrossFit] vs new [WFP]).
+        
+        Groups calendar events by (normalized_name, date) and keeps only
+        the one matching the expected title. Returns count of deleted events.
+        """
+        if not self.service:
+            return 0
+        
+        # Build expected titles for all competitions
+        expected = {}
+        for comp in competitions:
+            if not comp.date_start:
+                continue
+            name_norm = re.sub(r'[—–-]', '-', comp.name).lower().strip()
+            date_key = comp.date_start.strftime('%Y-%m-%d')
+            expected[(name_norm, date_key)] = comp
+        
+        # Find ghost events in calendar
+        deleted = 0
+        for (name_norm, date_key), comp in expected.items():
+            category_label = CATEGORY_LABELS.get(comp.category, "")
+            expected_title = f"[{category_label}] {comp.name}" if category_label else comp.name
+            expected_title_norm = re.sub(r'[—–-]', '-', expected_title)
+            
+            # Collect all calendar events matching this (normalized_name, date)
+            time_start = f"{date_key}T00:00:00Z"
+            time_end = f"{date_key}T23:59:59Z"
+            
+            try:
+                events = self.service.events().list(
+                    calendarId=self.calendar_id,
+                    timeMin=time_start,
+                    timeMax=time_end,
+                    singleEvents=True,
+                    maxResults=20
+                ).execute().get('items', [])
+            except Exception:
+                continue
+            
+            matching = []
+            for ev in events:
+                ev_summary_norm = re.sub(r'[—–-]', '-', ev.get('summary', ''))
+                ev_name = ev_summary_norm.lower().strip()
+                # Strip any [Category] prefix for comparison
+                ev_name_clean = re.sub(r'^\[[^\]]+\]\s*', '', ev_name)
+                if ev_name_clean == name_norm:
+                    matching.append(ev)
+            
+            # If multiple events match, keep the one with correct title, delete the rest
+            if len(matching) > 1:
+                # Prefer exact title match
+                keep = None
+                ghosts = []
+                for ev in matching:
+                    ev_summary_norm = re.sub(r'[—–-]', '-', ev.get('summary', ''))
+                    if ev_summary_norm == expected_title_norm:
+                        keep = ev
+                    else:
+                        ghosts.append(ev)
+                
+                # If no exact match, keep first, delete rest
+                if keep is None:
+                    keep = ghosts[0]
+                    ghosts = ghosts[1:]
+                
+                for ghost in ghosts:
+                    try:
+                        self.service.events().delete(
+                            calendarId=self.calendar_id,
+                            eventId=ghost['id']
+                        ).execute()
+                        print(f"Cleaned ghost: {ghost.get('summary')} ({ghost['id'][:12]}...)")
+                        deleted += 1
+                    except Exception as e:
+                        print(f"Failed to delete ghost {ghost.get('summary')}: {e}")
+        
+        if deleted:
+            print(f"Ghost cleanup: {deleted} duplicate events removed")
+        return deleted
+
     def sync_competitions(self, competitions: List[Competition], update_existing: bool = True) -> dict:
         """Sync multiple competitions to calendar."""
         results = {
@@ -579,6 +668,9 @@ class GoogleCalendarSync:
         # Deduplicate before syncing
         unique_competitions = self._deduplicate_competitions(competitions)
         print(f"Deduplicated: {len(competitions)} -> {len(unique_competitions)} competitions")
+        
+        # Clean up ghost events before building cache
+        self._cleanup_ghost_events(unique_competitions)
         
         # Build event cache once to prevent duplicate creation
         self._event_cache = self._build_event_cache()
